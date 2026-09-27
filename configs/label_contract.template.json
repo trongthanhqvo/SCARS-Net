@@ -1,0 +1,26 @@
+{
+  "schema_version": "scars-label-contract-1.0",
+  "datasets": {
+    "DroneRFa": {
+      "license_verified": false,
+      "derived_tensor_release_reviewed": false,
+      "temporal_adjacency_subsumed_by_split_group_verified": false,
+      "license_name": null,
+      "labels": {}
+    },
+    "DroneRFb-DIR": {
+      "license_verified": false,
+      "derived_tensor_release_reviewed": false,
+      "temporal_adjacency_subsumed_by_split_group_verified": false,
+      "license_name": null,
+      "labels": {}
+    },
+    "DRFF-R2": {
+      "license_verified": false,
+      "derived_tensor_release_reviewed": false,
+      "temporal_adjacency_subsumed_by_split_group_verified": false,
+      "license_name": null,
+      "labels": {}
+    }
+  }
+}

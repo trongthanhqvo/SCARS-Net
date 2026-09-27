@@ -1,0 +1,65 @@
+schema_version: 1.0.0
+status: frozen_protocol_pending_real_data
+probe: ridge
+normalization:
+  primary: source_global_percentile_clip
+  lower_quantile: 0.01
+  upper_quantile: 0.99
+  global_scalar_per_family: true
+  clip: [0.0, 1.0]
+configurations:
+  - raw_iq
+  - log_stft
+  - cwt
+  - wst_J3Q2
+  - wst_J4Q2
+  - wst_J5Q2
+  - cyclic_A4
+  - cyclic_A8
+  - cyclic_A16
+  - wst_cyclic_resolution_8
+  - wst_cyclic_resolution_16
+  - wst_cyclic_resolution_32
+effective_signature_fields:
+  - representation_kind
+  - active_families
+  - wst_J
+  - wst_Q
+  - cyclic_count
+  - output_resolution
+  - normalization
+  - frame_samples
+  - hop_samples
+  - probe
+amendment:
+  id: h2-unique-bank-20260829
+  authority: author_approved_before_target_access
+  reason: remove_effective_duplicates_W_equals_wst_J4Q2_and_C_equals_cyclic_A8
+  target_access_count_at_amendment: 0
+h4_comparator_contract:
+  lower_resolution_candidate: resolution_8
+  reference_candidate: resolution_32
+  substitution_after_target_access: forbidden
+failure_policy:
+  source_fold_failure: block_h2
+  target_failure: block_h2
+  posthoc_complete_case_deletion: forbidden
+  residual_norm_tolerance: 1.0e-10
+  minimum_indices_with_both_nonzero_residuals: 8
+statistic:
+  estimand: equal_domain_mean_partial_rank_residual_cross_product
+  conditioning_variables: [source_validation_macro_f1, log_macs, output_resolution]
+  uncertainty: hierarchical_recording_block_bootstrap
+  bootstrap_resamples: 10000
+  bootstrap_seed: 24022
+  valid_draw_fraction: 0.95
+scope:
+  minimum_complete_domains: 3
+  three_domain_support: restricted_to_registered_domains_and_configurations
+  causal_interpretation: forbidden
+excluded_from_h2_bank:
+  - energy_channel_controls
+  - optional_stft_anchor_masks
+  - binary_detection_arm
+  - robustness_curves
+  - learned_probe_results

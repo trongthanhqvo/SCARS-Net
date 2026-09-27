@@ -1,0 +1,14 @@
+SCARS / SCARS-Net / PCRD research implementation
+Copyright (c) 2026 SCARS-Net contributors.
+
+Original code and documentation in this release are licensed under Apache-2.0.
+Third-party dependencies and datasets retain their respective licenses.
+No permission to redistribute third-party data is granted by this code license.
+
+Associated manuscript authors:
+Trong Thanh Nguyen; Thi-Thanh-Tan Nguyen; Le Cuong Nguyen.
+The first two authors share first authorship in the manuscript;
+Le Cuong Nguyen is its corresponding author.
+
+This notice records attribution; it does not add restrictions to Apache-2.0.
+See docs/PROTOCOL.md for the supported execution protocol.

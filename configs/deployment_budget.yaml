@@ -1,0 +1,38 @@
+schema_version: 1.0.0
+status: frozen_for_rtx3060ti_16gb_host
+selection_policy:
+  source_f1_absolute_tolerance: 0.01
+  pareto_axes:
+    nuisance_sensitivity: minimize
+    source_selection_macro_f1: maximize
+    bytes_per_sample: minimize
+    estimated_macs: minimize
+    batch1_latency_ms: minimize
+  tie_break_order:
+    - nuisance_sensitivity
+    - batch1_latency_ms
+    - stable_config_id
+hard_constraints:
+  max_bytes_per_sample: 4096
+  max_batch1_latency_ms: 100
+  max_estimated_macs: 100000000
+measurement_policy:
+  warmup_batches: 20
+  measured_batches: 100
+  statistic: median
+  device_and_software_manifest_required: true
+gate:
+  allow_pareto_freeze: true
+  blocker: null
+hardware_profile:
+  host_ram_gb: 16
+  gpu: NVIDIA_RTX_3060_Ti
+  expected_gpu_vram_gb: 8
+  execution: sequential_folds_and_models
+  automatic_mixed_precision: true
+  initial_micro_batch_size: 32
+  minimum_micro_batch_size: 4
+  effective_batch_size: 64
+  cache_policy: per_recording_restart_safe_disk_cache
+  dataloader_workers: 0
+  note: Actual timing validity is established by the measured device/software manifest, not this declared envelope.

@@ -1,0 +1,64 @@
+{
+  "schema_version": "scars-label-contract-1.0",
+  "purpose": "Non-confirmatory two-dataset pilot for DroneRFa and DroneRFb-DIR. All non-background UAV/controller emissions are mapped to the coarse label uav.",
+  "datasets": {
+    "DroneRFa": {
+      "license_verified": true,
+      "derived_tensor_release_reviewed": false,
+      "temporal_adjacency_subsumed_by_split_group_verified": true,
+      "license_name": "author_verified_local_research_use_required_before_public_release",
+      "labels": {
+        "DJI_Phantom_3": "uav",
+        "DJI_Phantom_4_Pro": "uav",
+        "DJI_Matrice_200": "uav",
+        "DJI_Matrice_100": "uav",
+        "DJI_Air_2S": "uav",
+        "DJI_Mini_3_Pro": "uav",
+        "DJI_Inspire_2": "uav",
+        "DJI_Mavic_Pro": "uav",
+        "DJI_Mini_2": "uav",
+        "DJI_Mavic_3": "uav",
+        "DJI_Matrice_300": "uav",
+        "DJI_Phantom_4_Pro_RTK": "uav",
+        "DJI_Matrice_30T": "uav",
+        "DJI_Avata": "uav",
+        "DJI_custom_communication_module": "uav",
+        "DJI_Matrice_600_Pro": "uav",
+        "VBar_controller": "uav",
+        "FrSky_X20_controller": "uav",
+        "Futaba_T6IZ_controller": "uav",
+        "Taranis_Plus_controller": "uav",
+        "RadioLink_AT9S_controller": "uav",
+        "Futaba_T14SG_controller": "uav",
+        "YunZhuo_T12_controller": "uav",
+        "YunZhuo_T10_controller": "uav"
+      }
+    },
+    "DroneRFb-DIR": {
+      "license_verified": true,
+      "derived_tensor_release_reviewed": false,
+      "temporal_adjacency_subsumed_by_split_group_verified": true,
+      "license_name": "author_verified_local_research_use_required_before_public_release",
+      "labels": {
+        "A1": "uav",
+        "A2": "uav",
+        "C1": "uav",
+        "C2": "uav",
+        "D1": "uav",
+        "D2": "uav",
+        "E1": "uav",
+        "E2": "uav",
+        "F1": "uav",
+        "F2": "uav",
+        "G1": "uav",
+        "G2": "uav",
+        "DJI_Mavic_3_Pro": "uav",
+        "DJI_Mini_2_SE": "uav",
+        "DJI_Mini_4_Pro": "uav",
+        "DJI_Mini_3": "uav",
+        "DJI_Air_3": "uav",
+        "DJI_Air_2S": "uav"
+      }
+    }
+  }
+}

@@ -1,0 +1,108 @@
+schema_version: 1.0.0
+common:
+  identical_folds: true
+  identical_observation_samples: true
+  source_only_tuning: true
+  source_roles: [source_fit, source_calibration, source_selection, source_validation]
+  target_tuning: forbidden
+  primary_representation_probe: ridge
+tier_a:
+  - {id: raw_iq, representation: real_imag, probe: ridge}
+  - {id: log_stft, frame: 128, hop: 32, probe: ridge}
+  - {id: cwt, scales: 16, wavelet: gaussian_analytic_approximation, probe: ridge}
+  - {id: wst_only, J: 4, Q: 2, probe: ridge}
+  - {id: cyclic_only, cyclic_count: 8, probe: ridge}
+  - {id: wst_cyclic, J: 4, Q: 2, cyclic_count: 8, probe: ridge}
+tier_b:
+  raw_iq_1d_cnn:
+    channels: [32, 64, 128]
+    kernels: [9, 7, 5]
+    global_pool: true
+    optimizer: adamw
+    learning_rate: 0.001
+    weight_decay: 0.0001
+  patch_transformer:
+    input: log_stft_16x16
+    patch_size: [4, 4]
+    embedding_dim: 128
+    layers: 4
+    heads: 4
+    mlp_ratio: 2
+    optimizer: adamw
+    learning_rate: 0.001
+  small_resnet:
+    widths: [32, 64, 128]
+    blocks_per_stage: [1, 1, 1]
+    global_pool: true
+    optimizer: adamw
+    learning_rate: 0.001
+  stochastic_seeds: [11, 23, 37, 53, 71]
+tier_c:
+  - magnitude_phase
+  - stft_2d_dct_xgboost
+  - fixed_wavelet_subbands
+  - log_psd_sobel
+learned_common:
+  max_epochs: 100
+  initial_micro_batch_size: 32
+  minimum_micro_batch_size: 4
+  effective_batch_size: 64
+  gradient_accumulation: true
+  automatic_mixed_precision: true
+  oom_backoff: [32, 16, 8, 4]
+  dataloader_workers: 0
+  early_stopping_patience: 10
+  early_stopping_metric: source_validation_macro_f1
+  target_early_stopping: forbidden
+external_sota:
+  category: recent_external_sota_comparators
+  separate_from: [internal_representation_baselines, mechanism_controls, H1, H2, H3, H4, M1]
+  fairness:
+    retrain_on_identical_source_and_held_domain_protocol: true
+    published_cross_dataset_numbers_as_primary_evidence: forbidden
+    preserve_native_input_when_required: true
+    same_physical_observation_duration_when_supported: true
+    target_privilege_must_be_explicit: true
+    target_assisted_methods_in_primary_target_free_table: forbidden
+    unsupported_metadata_or_label_semantics: mark_ineligible
+  methods:
+    - id: open_rfnet
+      citation_key: gao2026openrfnet
+      target_privilege: source_only
+      implementation_status: frozen_ineligible
+      reason: native_training_code_and_closed_set_ontology_adapter_are_not_present_in_the_frozen_source_tree
+    - id: asa
+      citation_key: cai2025asa
+      target_privilege: source_only
+      implementation_status: frozen_ineligible
+      reason: faithful_semantic_augmentation_generator_and_author_hyperparameter_contract_are_not_present_in_the_frozen_source_tree
+    - id: avoiding_shortcuts
+      citation_key: wang2025shortcuts
+      target_privilege: source_only
+      implementation_status: frozen_ineligible
+      reason: faithful_native_impairment_model_and_training_implementation_are_not_present_in_the_frozen_source_tree
+    - id: riei
+      citation_key: zhang2024receiver
+      target_privilege: source_only
+      implementation_status: frozen_ineligible
+      reason: verified_receiver_identifiers_are_not_available_in_the_current_data_contract_and_no_faithful_adapter_is_present
+    - id: mtl_sei
+      citation_key: wang2026mtlsei
+      target_privilege: source_only
+      implementation_status: frozen_ineligible
+      reason: verified_receiver_labels_required_by_the_native_multitask_objective_are_not_available
+    - id: mcaff
+      citation_key: zeng2024mcaff
+      target_privilege: source_only
+      implementation_status: frozen_ineligible
+      reason: faithful_native_IQ_CFO_FFT_STFT_view_generator_and_training_implementation_are_not_present
+    - id: s3r
+      citation_key: yu2024s3r
+      target_privilege: source_only
+      implementation_status: frozen_ineligible
+      reason: signal_semantics_and_open_set_ontology_cannot_be_mapped_without_changing_the_frozen_closed_set_estimand
+    - id: rff_llm
+      citation_key: zheng2025rffllm
+      target_privilege: source_only
+      implementation_status: frozen_ineligible
+      reason: individual_emitter_identity_semantics_and_required_teacher_resources_are_not_available

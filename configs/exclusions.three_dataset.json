@@ -1,0 +1,9 @@
+{
+  "schema_version": "scars-v8-path-exclusions-1.0",
+  "recording_ids": [],
+  "drff_relative_paths": [
+    "dataset3-single_drone_hover/mavicAir2_5_hover_c2_u2_d1.mat",
+    "dataset6-wifi_mixed/mavic3S_1_c4.mat"
+  ],
+  "reason": "The two recordings with incomplete-download sidecars at protocol freeze are excluded. Original files are retained; exclusions remain fixed even if downloads later finish."
+}

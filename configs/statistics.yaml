@@ -1,0 +1,33 @@
+schema_version: 1.0.0
+alpha: 0.05
+registered_multiplicity_target: holm_h1_h4
+multiplicity_status: implemented_decision_engine_scars_confirmatory_1_0_0
+decision_engine_version: scars-confirmatory-1.1.0
+bootstrap:
+  confidence_level: 0.95
+  resamples: 10000
+  domain_aggregation: fixed_domains_equal_weighted
+  resampling_unit: physical_recording_or_event_with_complete_configuration_vector
+  seed: 24022
+hierarchical_h2:
+  estimand: equal_domain_mean_partial_rank_residual_cross_product
+  controls: [source_validation_macro_f1, log_macs, output_resolution]
+  source_inner_unit: recording_stratified_by_source_domain_and_class
+  target_inner_unit: recording_stratified_by_class
+  minimum_held_domains: 3
+  minimum_joint_nonzero_configurations: 8
+  residual_tolerance: 1.0e-10
+  minimum_valid_bootstrap_fraction: 0.95
+permutation:
+  label_tests_count: 10000
+  label_tests_seed: 24023
+effect_sizes:
+  paired_standardized_mean: true
+  report_raw_delta: true
+  h3_minimum_standardized_effect: 0.2
+reporting:
+  average_domain: true
+  worst_domain: true
+  per_domain: true
+  per_seed: true
+  windows_as_replicates: forbidden

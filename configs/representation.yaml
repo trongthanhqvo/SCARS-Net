@@ -1,0 +1,58 @@
+schema_version: 1.0.0
+input:
+  dtype: complex64
+  window_samples: 4096
+  hop_samples: 2048
+  group_split_before_windowing: true
+common:
+  output_resolutions: [8, 16, 32]
+  resize_mode: separable_linear_interpolation
+  primary_resolution: 16
+normalization:
+  primary: source_global_percentile_clip
+  lower_quantile: 0.01
+  upper_quantile: 0.99
+  scalar_per_channel_family: true
+  target_fit_forbidden: true
+  ablations: [source_zscore, none]
+wavelet_scattering:
+  backend: registered_periodic_analytic_morlet_order12
+  exact_registered_discrete_graph: true
+  continuous_wst_equivalence_claim: false
+  max_order: 2
+  boundary: periodic_fft
+  nominal: {J: 4, Q: 2}
+  sweep:
+    J: [3, 4, 5]
+    Q: [1, 2, 4]
+  log_filter_norms: true
+  enumerate_paths: true
+cyclostationary:
+  taper: hann
+  frame_samples: 128
+  hop_samples: 32
+  fft_samples: 128
+  denominator_floor: 1.0e-8
+  nominal_cyclic_count: 8
+  cyclic_count_sweep: [4, 8, 16]
+  source_peak_selection: true
+  minimum_peak_separation_bins: 2
+  tie_rule: smallest_nonnegative_cyclic_bin_then_signed_index
+  frozen_alpha_unit: cycles_per_sample
+  frame_shift_rule: round_alpha_times_frame_clipped_to_nonzero
+  target_peak_selection_forbidden: true
+energy:
+  transform: log1p_energy_over_source_reference
+  source_reference: median_recording_window_energy
+  bypass_percentile_normalization: true
+stft_anchor:
+  optional: true
+  taper: hann
+  frame_samples: 128
+  hop_samples: 32
+  fft_samples: 128
+  value: log_power
+tensor:
+  family_order: [W, C, E, S]
+  common_resize_required: true
+  masks: [W, C, W+C, W+C+E, W+C+E+S]

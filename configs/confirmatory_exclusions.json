@@ -1,0 +1,9 @@
+{
+  "schema_version": "scars-confirmatory-exclusions-1.0",
+  "reason": "These recordings were explicitly assigned or exported as target-side records during the 2026-08-23 preprocessing smoke and cannot be called untouched confirmatory targets.",
+  "recording_ids": [
+    "DRFF-R2:dataset/dataset1-single_drone_states/mavic3C_1_Ascend_c17_u1_d2.mat:RF0",
+    "DRFF-R2:dataset/dataset6-wifi_mixed/mavic3C_1_c1.mat:RF0",
+    "DroneRFb-DIR:dataset/test/0.mat:RF0"
+  ]
+}

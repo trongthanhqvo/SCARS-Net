@@ -1,0 +1,16 @@
+schema_version: 1.0.0
+primary_axis: dataset
+primary_protocol: leave_one_dataset_out
+minimum_complete_domains: 3
+secondary_axes:
+  - receiver
+  - session
+  - environment
+  - band
+  - acquisition_day
+  - device_group
+missing_metadata_policy: keep_missing_and_disable_unsupported_axis
+target_access:
+  freeze_all_source_fold_manifests_before_first_target_result: true
+  unlocks_per_fold: 1
+  cross_fold_feedback: forbidden

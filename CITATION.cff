@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "Please cite this source release and the associated manuscript when using the code."
+type: software
+title: "SCARS-Net: Source-Only Pareto-Consistent Reliability Distillation for Physics-Guided UAV Radio-Frequency Recognition"
+authors:
+  - family-names: Nguyen
+    given-names: Trong Thanh
+  - family-names: Nguyen
+    given-names: Thi-Thanh-Tan
+  - family-names: Nguyen
+    given-names: Le Cuong
+license: Apache-2.0
+abstract: >-
+  Source-only RF representation selection and physical reliability-guided
+  late fusion for UAV recognition. The three-dataset runner implements an
+  exploratory held-domain protocol documented in docs/PROTOCOL.md.

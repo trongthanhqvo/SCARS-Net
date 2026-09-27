@@ -1,0 +1,41 @@
+schema_version: scars-campaign-contract-1.0
+status: frozen_before_target_access
+scientific_core: [SCARS, SCARS-Net, PCRD, H1, H2, H3, H4, M1]
+target_access:
+  authorized: false
+  required_ledger_count_before_unlock: 0
+  ready_freeze_manifest_required: true
+source_roles: [source_fit, source_selection, source_calibration, source_validation]
+seeds:
+  source_freeze: 24021
+  learned_models: [11, 23, 37, 53, 71]
+  h2_bootstrap: 24022
+training:
+  max_epochs: 100
+  patience: 10
+  micro_batch_size: 32
+  effective_batch_size: 64
+  minimum_oom_backoff_batch_size: 4
+  automatic_mixed_precision: true
+contracts:
+  nuisance: configs/nuisance_grid.yaml
+  h2: configs/h2_bank.yaml
+  sampling: configs/experiments.yaml#training_sampling
+  ensemble: five_probability_vectors_mean_and_five_model_deployment_cost
+  external_sota: configs/baselines.yaml#external_sota
+  deployment_budget: configs/deployment_budget.yaml
+  statistical_rules: configs/statistics.yaml
+  ontology: author_supplied_label_contract_required
+go_no_go_gates:
+  - nuisance_contract_frozen
+  - h2_bank_unique
+  - h2_statistical_audit_pass
+  - sampling_policy_frozen
+  - five_seed_ensemble_semantics_frozen
+  - external_sota_statuses_frozen
+  - ontology_frozen
+  - group_leakage_audit_pass
+  - source_only_dry_run_pass
+  - invariant_tests_pass
+  - hashes_and_provenance_complete
+  - target_access_count_zero

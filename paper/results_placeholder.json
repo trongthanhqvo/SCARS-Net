@@ -1,0 +1,5402 @@
+{
+  "schema_version": "scars-canonical-results-2.0",
+  "evidence_type": "synthetic_dev",
+  "run": {
+    "run_id": "SCHEMA-DEMO-NOT-A-RESULT",
+    "created_at": null,
+    "status": "schema_demo_only",
+    "elapsed_sec": null,
+    "command": null,
+    "device": null,
+    "seeds": [
+      11,
+      23,
+      37,
+      53,
+      71
+    ]
+  },
+  "provenance": {
+    "git_commit": null,
+    "code_archive_sha256": null,
+    "dataset_checksums": null,
+    "source_role_manifests": null,
+    "transform_hash": null,
+    "teacher_hashes": null,
+    "calibration_hash": null,
+    "relation_cache_hash": null,
+    "student_hash": null,
+    "environment": null,
+    "hardware_power_manifest": null,
+    "target_access_ledger": null,
+    "artifact_manifest": null
+  },
+  "datasets": {
+    "domains": [
+      "DroneRFa",
+      "DroneRFb-DIR",
+      "DRFF-R2"
+    ],
+    "ontology": null,
+    "acquisition_gate": null
+  },
+  "splits": {
+    "folds": [
+      {
+        "fold_id": "held_domain=DroneRFa",
+        "source_domains": [
+          "DroneRFb-DIR",
+          "DRFF-R2"
+        ],
+        "held_domain": "DroneRFa",
+        "split_before_windowing": true,
+        "group_axes": null,
+        "recording_ids": null,
+        "manifest_hash": null
+      },
+      {
+        "fold_id": "held_domain=DroneRFb-DIR",
+        "source_domains": [
+          "DroneRFa",
+          "DRFF-R2"
+        ],
+        "held_domain": "DroneRFb-DIR",
+        "split_before_windowing": true,
+        "group_axes": null,
+        "recording_ids": null,
+        "manifest_hash": null
+      },
+      {
+        "fold_id": "held_domain=DRFF-R2",
+        "source_domains": [
+          "DroneRFa",
+          "DroneRFb-DIR"
+        ],
+        "held_domain": "DRFF-R2",
+        "split_before_windowing": true,
+        "group_axes": null,
+        "recording_ids": null,
+        "manifest_hash": null
+      }
+    ],
+    "manifest_hash": null
+  },
+  "source_fitting": {
+    "folds": [
+      {
+        "fold_id": "held_domain=DroneRFa",
+        "normalization_state": null,
+        "cyclic_frequency_set": null,
+        "teacher_relation": null,
+        "pareto_state": null,
+        "source_only_audit": null
+      },
+      {
+        "fold_id": "held_domain=DroneRFb-DIR",
+        "normalization_state": null,
+        "cyclic_frequency_set": null,
+        "teacher_relation": null,
+        "pareto_state": null,
+        "source_only_audit": null
+      },
+      {
+        "fold_id": "held_domain=DRFF-R2",
+        "normalization_state": null,
+        "cyclic_frequency_set": null,
+        "teacher_relation": null,
+        "pareto_state": null,
+        "source_only_audit": null
+      }
+    ]
+  },
+  "representations": {
+    "configuration_order": null,
+    "records": {
+      "W": null,
+      "C": null,
+      "E": null,
+      "S": null,
+      "tensor_contract": {
+        "dtype": "float32",
+        "shape": [
+          4,
+          16,
+          16
+        ],
+        "bytes": 4096,
+        "channel_order": [
+          "W",
+          "C",
+          "E",
+          "S"
+        ],
+        "scope": "nominal full-family pre-selection tensor"
+      }
+    }
+  },
+  "source_selection": {
+    "policy": "source-only Pareto selection without scalarization",
+    "folds": [
+      {
+        "fold_id": "held_domain=DroneRFa",
+        "candidate_records": null,
+        "pareto_front": null,
+        "selected_configuration": null,
+        "selection_audit": null
+      },
+      {
+        "fold_id": "held_domain=DroneRFb-DIR",
+        "candidate_records": null,
+        "pareto_front": null,
+        "selected_configuration": null,
+        "selection_audit": null
+      },
+      {
+        "fold_id": "held_domain=DRFF-R2",
+        "candidate_records": null,
+        "pareto_front": null,
+        "selected_configuration": null,
+        "selection_audit": null
+      }
+    ]
+  },
+  "static_metadata": {
+    "status": "computed_without_real_iq_or_training",
+    "empirical_evidence": false,
+    "generated_from": {
+      "project": "scars-uav-rf",
+      "config_sha256": {
+        "representation.yaml": "68a6cd921ff4c3bc65c904954b6dc3378ad26bfd0e26402e80de9d4b9400ec08",
+        "experiments.yaml": "cb42a5b4b6d38e21934f32b2c0c3652edcc67e9f38c2c267fb93ade9858182e9",
+        "baselines.yaml": "dd624e1c0c3b0f8540284496e385959f44f7d7a827515a5461303248fc20725e",
+        "nuisance_grid.yaml": "f6fa71bb738d7bad43f0612f5eb5f509053af32654d491776d333c4a1f945b27"
+      },
+      "source_sha256": {
+        "src/scars/cli/collect_static_metadata.py": "1be3ad9efffc14f0d1ad3efed5f7761533ed983ad8857de2da26ff8862be05e0",
+        "src/scars/evaluation/costs.py": "f2ef1b0eff572b23b6c9de1295fdd6fc2f9d6bf852cab8a16f56779f5caceff5",
+        "src/scars/models/baselines.py": "47954b7e0ddf570d148a419bd99886fef48e0a9b05087f45d06298121a72c107",
+        "src/scars/models/scars_net.py": "9d3fe55e5e225e2649a2a01aa6dcb915d5a0bd45a1d13f4d89437382d1bd4d02",
+        "src/scars/representations/scattering.py": "3e88ceff4aa7dc40d76b6f56e57716b319c63fcdeec7a169c213f8dbe13f1749",
+        "src/scars/representations/tensor.py": "8425f42a581fdc198bb54906eb85ec9eaf5ba4b6883266bf366c788f4d45bc6f",
+        "src/scars/baselines/registry.py": "eb2349435c6871882c3e122408977ac464f4285646e72fa1ca375bb46580505d",
+        "src/scars/results/registry.py": "02951d76af4f553d268799dd5bae2c04a20477ac88d5a6fb7e54cfa7f6819b79",
+        "src/scars/results/schema.py": "e50f636f1d25719c8413d022d3aaea71b4bb802bcb588336dfdddb565b041910",
+        "src/scars/results/validator.py": "754fe1eb9b32c956cd04f8d611e7afed64e1638ff6b3cadbb7e2099c24382a46",
+        "src/scars/cli/finalize_results.py": "af34d17a5e9e6d98b56f70d63cb95aa2ef421d019f2d99212c00ce12c7144202"
+      },
+      "collector_environment": {
+        "python": "3.11.7",
+        "implementation": "CPython",
+        "numpy": "1.26.4",
+        "torch": "2.5.1",
+        "pyyaml": "6.0.1",
+        "platform": "darwin"
+      }
+    },
+    "registry_counts": {
+      "candidate_datasets": 3,
+      "recognition_conditions": 15,
+      "neural_conditions": 13,
+      "ablation_conditions": 30,
+      "required_seeds": 5,
+      "candidate_held_domain_folds": 3,
+      "nominal_neural_fold_seed_runs": 195,
+      "nominal_recognition_fold_seed_cells": 213,
+      "ablation_fold_seed_cells": null,
+      "ablation_fold_seed_formula": "sum_d (26 + 5 A_d) = 78 + 5 sum_d A_d for three eligible folds",
+      "scope_note": "Nominal three-fold recognition count follows the runtime seed contract: five seeds for 14 conditions and one deterministic fixed-wavelet row. The ablation count remains symbolic because A_d is selected independently per fold; 26 representation ablations run once per fold and each active-family deletion runs five seeds. Actual eligible folds and A_d remain null until preflight/source freeze."
+    },
+    "protocol": {
+      "candidate_datasets": [
+        "DroneRFa",
+        "DroneRFb-DIR",
+        "DRFF-R2"
+      ],
+      "required_seeds": [
+        11,
+        23,
+        37,
+        53,
+        71
+      ],
+      "window_samples": 4096,
+      "window_hop_samples": 2048,
+      "window_overlap_samples": 2048,
+      "window_overlap_fraction": 0.5,
+      "input_complex_dtype": "complex64",
+      "input_window_bytes": 32768,
+      "group_split_before_windowing": true,
+      "registered_resamples": 10000,
+      "latency_warmups": 20,
+      "latency_repeats": 100,
+      "source_only_tuning": true,
+      "target_tuning": "forbidden"
+    },
+    "representation": {
+      "stored_dtype": "float32",
+      "bytes_per_value": 4,
+      "family_order": [
+        "W",
+        "C",
+        "E",
+        "S"
+      ],
+      "candidate_resolutions": [
+        8,
+        16,
+        32
+      ],
+      "primary_resolution": 16,
+      "tensor_profiles": [
+        {
+          "resolution": 8,
+          "full_family_shape": [
+            4,
+            8,
+            8
+          ],
+          "bytes_per_family": 256,
+          "full_tensor_bytes": 1024,
+          "active_tensor_bytes_formula": "256 A",
+          "active_family_symbol": "A"
+        },
+        {
+          "resolution": 16,
+          "full_family_shape": [
+            4,
+            16,
+            16
+          ],
+          "bytes_per_family": 1024,
+          "full_tensor_bytes": 4096,
+          "active_tensor_bytes_formula": "1024 A",
+          "active_family_symbol": "A"
+        },
+        {
+          "resolution": 32,
+          "full_family_shape": [
+            4,
+            32,
+            32
+          ],
+          "bytes_per_family": 4096,
+          "full_tensor_bytes": 16384,
+          "active_tensor_bytes_formula": "4096 A",
+          "active_family_symbol": "A"
+        }
+      ],
+      "nominal_full_tensor_shape": [
+        4,
+        16,
+        16
+      ],
+      "nominal_full_tensor_bytes": 4096,
+      "frame_samples": 128,
+      "frame_hop_samples": 32,
+      "frames_per_window": 125,
+      "native_stft_shape": [
+        128,
+        125
+      ],
+      "native_energy_shape": [
+        125,
+        2
+      ],
+      "nominal_native_cyclic_shape": [
+        8,
+        128
+      ],
+      "nominal_cyclic_count": 8,
+      "cyclic_count_sweep": [
+        4,
+        8,
+        16
+      ],
+      "cyclic_frequency_values": null,
+      "cyclic_frequency_reason_null": "Source-fitted from eligible source recordings.",
+      "wst_nominal": {
+        "J": 4,
+        "Q": 2
+      },
+      "wst_path_profiles": [
+        {
+          "J": 3,
+          "Q": 1,
+          "order1_paths": 3,
+          "order2_paths": 3,
+          "total_paths": 6
+        },
+        {
+          "J": 3,
+          "Q": 2,
+          "order1_paths": 6,
+          "order2_paths": 6,
+          "total_paths": 12
+        },
+        {
+          "J": 3,
+          "Q": 4,
+          "order1_paths": 12,
+          "order2_paths": 12,
+          "total_paths": 24
+        },
+        {
+          "J": 4,
+          "Q": 1,
+          "order1_paths": 4,
+          "order2_paths": 6,
+          "total_paths": 10
+        },
+        {
+          "J": 4,
+          "Q": 2,
+          "order1_paths": 8,
+          "order2_paths": 12,
+          "total_paths": 20
+        },
+        {
+          "J": 4,
+          "Q": 4,
+          "order1_paths": 16,
+          "order2_paths": 24,
+          "total_paths": 40
+        },
+        {
+          "J": 5,
+          "Q": 1,
+          "order1_paths": 5,
+          "order2_paths": 10,
+          "total_paths": 15
+        },
+        {
+          "J": 5,
+          "Q": 2,
+          "order1_paths": 10,
+          "order2_paths": 20,
+          "total_paths": 30
+        },
+        {
+          "J": 5,
+          "Q": 4,
+          "order1_paths": 20,
+          "order2_paths": 40,
+          "total_paths": 60
+        }
+      ],
+      "normalization_quantiles": [
+        0.01,
+        0.99
+      ],
+      "normalization_values": null,
+      "energy_reference": null,
+      "active_families": null,
+      "source_selected_configuration": null
+    },
+    "nuisance_grid": {
+      "family_count": 10,
+      "severity_case_count": 32,
+      "families": [
+        {
+          "id": "awgn",
+          "parameter": "snr_db",
+          "severities": [
+            20,
+            10,
+            0,
+            -10
+          ],
+          "units": "dB"
+        },
+        {
+          "id": "colored_noise",
+          "parameter": "snr_db",
+          "severities": [
+            20,
+            10,
+            0
+          ],
+          "units": "dB"
+        },
+        {
+          "id": "multipath",
+          "parameter": "max_delay_samples",
+          "severities": [
+            1,
+            4,
+            8
+          ],
+          "units": "samples"
+        },
+        {
+          "id": "flat_fading",
+          "parameter": "amplitude_scale",
+          "severities": [
+            0.9,
+            0.7,
+            0.5
+          ],
+          "units": "relative amplitude"
+        },
+        {
+          "id": "carrier_frequency_offset",
+          "parameter": "normalized_cfo",
+          "severities": [
+            0.0001,
+            0.0005,
+            0.001
+          ],
+          "units": "cycles_per_sample"
+        },
+        {
+          "id": "global_phase",
+          "parameter": "phase_rad",
+          "severities": [
+            0.7853981634,
+            1.5707963268,
+            3.1415926536
+          ],
+          "units": "radians"
+        },
+        {
+          "id": "timing_offset",
+          "parameter": "shift_samples",
+          "severities": [
+            1,
+            4,
+            16
+          ],
+          "units": "samples"
+        },
+        {
+          "id": "time_scaling",
+          "parameter": "fractional_scale",
+          "severities": [
+            0.0001,
+            0.001,
+            0.005
+          ],
+          "units": "fraction"
+        },
+        {
+          "id": "bandpass_response",
+          "parameter": "ripple_db",
+          "severities": [
+            0.5,
+            1.0,
+            3.0
+          ],
+          "units": "dB"
+        },
+        {
+          "id": "ism_mixing",
+          "parameter": "sir_db",
+          "severities": [
+            20,
+            10,
+            0,
+            -10
+          ],
+          "units": "dB"
+        }
+      ]
+    },
+    "robustness_grid": {
+      "snr_db": [
+        20,
+        10,
+        0,
+        -10
+      ],
+      "sir_db": [
+        20,
+        10,
+        0,
+        -10
+      ],
+      "metrics": [
+        "macro_f1",
+        "normalized_curve_auc"
+      ]
+    },
+    "models": {
+      "mac_definition": "Conv/Linear/MultiheadAttention MACs; excludes normalization, activation, pooling, softmax, indexing, and I/O.",
+      "mac_estimator_version": "scars-model-macs-v2-conv-linear-attention",
+      "conditions": {
+        "raw_iq_cnn": {
+          "class_symbol": "K",
+          "parameters": null,
+          "parameter_formula": {
+            "intercept": 56320,
+            "per_class": 129,
+            "display": "56320 + 129 K"
+          },
+          "macs": null,
+          "mac_formula": {
+            "intercept": 73662464,
+            "per_class": 128,
+            "display": "73662464 + 128 K"
+          },
+          "exact_when": "Substitute the frozen shared ontology class count K.",
+          "input_kind": "real_imag_waveform",
+          "trainer": "torch",
+          "input_shape": [
+            1,
+            2,
+            4096
+          ],
+          "active_families_assumed": null,
+          "scope_note": "Exact architecture formula before training; K remains data-contract dependent."
+        },
+        "patch_transformer": {
+          "class_symbol": "K",
+          "parameters": null,
+          "parameter_formula": {
+            "intercept": 534400,
+            "per_class": 129,
+            "display": "534400 + 129 K"
+          },
+          "macs": null,
+          "mac_formula": {
+            "intercept": 8683520,
+            "per_class": 128,
+            "display": "8683520 + 128 K"
+          },
+          "exact_when": "Substitute the frozen shared ontology class count K.",
+          "input_kind": "log_stft_image",
+          "trainer": "torch",
+          "input_shape": [
+            1,
+            1,
+            16,
+            16
+          ],
+          "active_families_assumed": null,
+          "scope_note": "Exact architecture formula before training; K remains data-contract dependent."
+        },
+        "magnitude_phase_cnn": {
+          "class_symbol": "K",
+          "parameters": null,
+          "parameter_formula": {
+            "intercept": 56320,
+            "per_class": 129,
+            "display": "56320 + 129 K"
+          },
+          "macs": null,
+          "mac_formula": {
+            "intercept": 73662464,
+            "per_class": 128,
+            "display": "73662464 + 128 K"
+          },
+          "exact_when": "Substitute the frozen shared ontology class count K.",
+          "input_kind": "magnitude_phase_waveform",
+          "trainer": "torch",
+          "input_shape": [
+            1,
+            2,
+            4096
+          ],
+          "active_families_assumed": null,
+          "scope_note": "Exact architecture formula before training; K remains data-contract dependent."
+        },
+        "log_stft_cnn": {
+          "class_symbol": "K",
+          "parameters": null,
+          "parameter_formula": {
+            "intercept": 306400,
+            "per_class": 129,
+            "display": "306400 + 129 K"
+          },
+          "macs": null,
+          "mac_formula": {
+            "intercept": 12132352,
+            "per_class": 128,
+            "display": "12132352 + 128 K"
+          },
+          "exact_when": "Substitute the frozen shared ontology class count K.",
+          "input_kind": "log_stft_image",
+          "trainer": "torch",
+          "input_shape": [
+            1,
+            1,
+            16,
+            16
+          ],
+          "active_families_assumed": null,
+          "scope_note": "Exact architecture formula before training; K remains data-contract dependent."
+        },
+        "cwt_cnn": {
+          "class_symbol": "K",
+          "parameters": null,
+          "parameter_formula": {
+            "intercept": 306400,
+            "per_class": 129,
+            "display": "306400 + 129 K"
+          },
+          "macs": null,
+          "mac_formula": {
+            "intercept": 12132352,
+            "per_class": 128,
+            "display": "12132352 + 128 K"
+          },
+          "exact_when": "Substitute the frozen shared ontology class count K.",
+          "input_kind": "cwt_image",
+          "trainer": "torch",
+          "input_shape": [
+            1,
+            1,
+            16,
+            16
+          ],
+          "active_families_assumed": null,
+          "scope_note": "Exact architecture formula before training; K remains data-contract dependent."
+        },
+        "wst_only": {
+          "class_symbol": "K",
+          "parameters": null,
+          "parameter_formula": {
+            "intercept": 306400,
+            "per_class": 129,
+            "display": "306400 + 129 K"
+          },
+          "macs": null,
+          "mac_formula": {
+            "intercept": 12132352,
+            "per_class": 128,
+            "display": "12132352 + 128 K"
+          },
+          "exact_when": "Substitute the frozen shared ontology class count K.",
+          "input_kind": "W",
+          "trainer": "torch",
+          "input_shape": [
+            1,
+            1,
+            16,
+            16
+          ],
+          "active_families_assumed": null,
+          "scope_note": "Exact architecture formula before training; K remains data-contract dependent."
+        },
+        "cyclic_only": {
+          "class_symbol": "K",
+          "parameters": null,
+          "parameter_formula": {
+            "intercept": 306400,
+            "per_class": 129,
+            "display": "306400 + 129 K"
+          },
+          "macs": null,
+          "mac_formula": {
+            "intercept": 12132352,
+            "per_class": 128,
+            "display": "12132352 + 128 K"
+          },
+          "exact_when": "Substitute the frozen shared ontology class count K.",
+          "input_kind": "C",
+          "trainer": "torch",
+          "input_shape": [
+            1,
+            1,
+            16,
+            16
+          ],
+          "active_families_assumed": null,
+          "scope_note": "Exact architecture formula before training; K remains data-contract dependent."
+        },
+        "stft_dct_xgboost": {
+          "input_kind": "stft_dct_64",
+          "trainer": "xgboost",
+          "input_shape": null,
+          "parameters": null,
+          "macs": null,
+          "reason_null": "Fitted ridge/XGBoost size depends on frozen feature and ontology artifacts."
+        },
+        "fixed_wavelet_subbands": {
+          "input_kind": "db4_packet_energy_8",
+          "trainer": "ridge",
+          "input_shape": null,
+          "parameters": null,
+          "macs": null,
+          "reason_null": "Fitted ridge/XGBoost size depends on frozen feature and ontology artifacts."
+        },
+        "log_psd_sobel": {
+          "class_symbol": "K",
+          "parameters": null,
+          "parameter_formula": {
+            "intercept": 306976,
+            "per_class": 129,
+            "display": "306976 + 129 K"
+          },
+          "macs": null,
+          "mac_formula": {
+            "intercept": 12279808,
+            "per_class": 128,
+            "display": "12279808 + 128 K"
+          },
+          "exact_when": "Substitute the frozen shared ontology class count K.",
+          "input_kind": "log_psd_sobel_3ch",
+          "trainer": "torch",
+          "input_shape": [
+            1,
+            3,
+            16,
+            16
+          ],
+          "active_families_assumed": null,
+          "scope_note": "Exact architecture formula before training; K remains data-contract dependent."
+        },
+        "early_fusion_resnet": {
+          "class_symbol": "K",
+          "parameters": null,
+          "parameter_formula": {
+            "intercept": 307264,
+            "per_class": 129,
+            "display": "307264 + 129 K"
+          },
+          "macs": null,
+          "mac_formula": {
+            "intercept": 12353536,
+            "per_class": 128,
+            "display": "12353536 + 128 K"
+          },
+          "exact_when": "Substitute the frozen shared ontology class count K.",
+          "input_kind": "active_tensor",
+          "trainer": "torch_capacity_matched",
+          "input_shape": [
+            1,
+            4,
+            16,
+            16
+          ],
+          "active_families_assumed": [
+            "W",
+            "C",
+            "E",
+            "S"
+          ],
+          "scope_note": "Topology profile at base_width=32; the reported early-fusion row remains null until the capacity-matched width is frozen."
+        },
+        "uniform_late_fusion": {
+          "class_symbol": "K",
+          "parameters": null,
+          "parameter_formula": {
+            "intercept": 156416,
+            "per_class": 129,
+            "display": "156416 + 129 K"
+          },
+          "macs": null,
+          "mac_formula": {
+            "intercept": 11272192,
+            "per_class": 128,
+            "display": "11272192 + 128 K"
+          },
+          "exact_when": "Substitute the frozen shared ontology class count K.",
+          "input_kind": "active_tensor",
+          "trainer": "torch",
+          "input_shape": [
+            1,
+            4,
+            16,
+            16
+          ],
+          "active_families_assumed": [
+            "W",
+            "C",
+            "E",
+            "S"
+          ],
+          "scope_note": "Exact architecture formula before training; K remains data-contract dependent."
+        },
+        "ordinary_gate": {
+          "class_symbol": "K",
+          "parameters": null,
+          "parameter_formula": {
+            "intercept": 222596,
+            "per_class": 129,
+            "display": "222596 + 129 K"
+          },
+          "macs": null,
+          "mac_formula": {
+            "intercept": 11338240,
+            "per_class": 128,
+            "display": "11338240 + 128 K"
+          },
+          "exact_when": "Substitute the frozen shared ontology class count K.",
+          "input_kind": "active_tensor",
+          "trainer": "scars_net_lambda_0",
+          "input_shape": [
+            1,
+            4,
+            16,
+            16
+          ],
+          "active_families_assumed": [
+            "W",
+            "C",
+            "E",
+            "S"
+          ],
+          "scope_note": "Exact architecture formula before training; K remains data-contract dependent."
+        },
+        "shuffled_pcrd": {
+          "class_symbol": "K",
+          "parameters": null,
+          "parameter_formula": {
+            "intercept": 222596,
+            "per_class": 129,
+            "display": "222596 + 129 K"
+          },
+          "macs": null,
+          "mac_formula": {
+            "intercept": 11338240,
+            "per_class": 128,
+            "display": "11338240 + 128 K"
+          },
+          "exact_when": "Substitute the frozen shared ontology class count K.",
+          "input_kind": "active_tensor",
+          "trainer": "scars_net_shuffled_relations",
+          "input_shape": [
+            1,
+            4,
+            16,
+            16
+          ],
+          "active_families_assumed": [
+            "W",
+            "C",
+            "E",
+            "S"
+          ],
+          "scope_note": "Exact architecture formula before training; K remains data-contract dependent."
+        },
+        "pcrd": {
+          "class_symbol": "K",
+          "parameters": null,
+          "parameter_formula": {
+            "intercept": 222596,
+            "per_class": 129,
+            "display": "222596 + 129 K"
+          },
+          "macs": null,
+          "mac_formula": {
+            "intercept": 11338240,
+            "per_class": 128,
+            "display": "11338240 + 128 K"
+          },
+          "exact_when": "Substitute the frozen shared ontology class count K.",
+          "input_kind": "active_tensor",
+          "trainer": "scars_net_pcrd",
+          "input_shape": [
+            1,
+            4,
+            16,
+            16
+          ],
+          "active_families_assumed": [
+            "W",
+            "C",
+            "E",
+            "S"
+          ],
+          "scope_note": "Exact architecture formula before training; K remains data-contract dependent."
+        }
+      },
+      "active_family_profiles": {
+        "1": {
+          "families": [
+            "W"
+          ],
+          "scars_net": {
+            "class_symbol": "K",
+            "parameters": null,
+            "parameter_formula": {
+              "intercept": 55745,
+              "per_class": 129,
+              "display": "55745 + 129 K"
+            },
+            "macs": null,
+            "mac_formula": {
+              "intercept": 2834560,
+              "per_class": 128,
+              "display": "2834560 + 128 K"
+            },
+            "exact_when": "Substitute the frozen shared ontology class count K."
+          },
+          "uniform_late_fusion": {
+            "class_symbol": "K",
+            "parameters": null,
+            "parameter_formula": {
+              "intercept": 39104,
+              "per_class": 129,
+              "display": "39104 + 129 K"
+            },
+            "macs": null,
+            "mac_formula": {
+              "intercept": 2818048,
+              "per_class": 128,
+              "display": "2818048 + 128 K"
+            },
+            "exact_when": "Substitute the frozen shared ontology class count K."
+          }
+        },
+        "2": {
+          "families": [
+            "W",
+            "C"
+          ],
+          "scars_net": {
+            "class_symbol": "K",
+            "parameters": null,
+            "parameter_formula": {
+              "intercept": 111362,
+              "per_class": 129,
+              "display": "111362 + 129 K"
+            },
+            "macs": null,
+            "mac_formula": {
+              "intercept": 5669120,
+              "per_class": 128,
+              "display": "5669120 + 128 K"
+            },
+            "exact_when": "Substitute the frozen shared ontology class count K."
+          },
+          "uniform_late_fusion": {
+            "class_symbol": "K",
+            "parameters": null,
+            "parameter_formula": {
+              "intercept": 78208,
+              "per_class": 129,
+              "display": "78208 + 129 K"
+            },
+            "macs": null,
+            "mac_formula": {
+              "intercept": 5636096,
+              "per_class": 128,
+              "display": "5636096 + 128 K"
+            },
+            "exact_when": "Substitute the frozen shared ontology class count K."
+          }
+        },
+        "3": {
+          "families": [
+            "W",
+            "C",
+            "E"
+          ],
+          "scars_net": {
+            "class_symbol": "K",
+            "parameters": null,
+            "parameter_formula": {
+              "intercept": 166979,
+              "per_class": 129,
+              "display": "166979 + 129 K"
+            },
+            "macs": null,
+            "mac_formula": {
+              "intercept": 8503680,
+              "per_class": 128,
+              "display": "8503680 + 128 K"
+            },
+            "exact_when": "Substitute the frozen shared ontology class count K."
+          },
+          "uniform_late_fusion": {
+            "class_symbol": "K",
+            "parameters": null,
+            "parameter_formula": {
+              "intercept": 117312,
+              "per_class": 129,
+              "display": "117312 + 129 K"
+            },
+            "macs": null,
+            "mac_formula": {
+              "intercept": 8454144,
+              "per_class": 128,
+              "display": "8454144 + 128 K"
+            },
+            "exact_when": "Substitute the frozen shared ontology class count K."
+          }
+        },
+        "4": {
+          "families": [
+            "W",
+            "C",
+            "E",
+            "S"
+          ],
+          "scars_net": {
+            "class_symbol": "K",
+            "parameters": null,
+            "parameter_formula": {
+              "intercept": 222596,
+              "per_class": 129,
+              "display": "222596 + 129 K"
+            },
+            "macs": null,
+            "mac_formula": {
+              "intercept": 11338240,
+              "per_class": 128,
+              "display": "11338240 + 128 K"
+            },
+            "exact_when": "Substitute the frozen shared ontology class count K."
+          },
+          "uniform_late_fusion": {
+            "class_symbol": "K",
+            "parameters": null,
+            "parameter_formula": {
+              "intercept": 156416,
+              "per_class": 129,
+              "display": "156416 + 129 K"
+            },
+            "macs": null,
+            "mac_formula": {
+              "intercept": 11272192,
+              "per_class": 128,
+              "display": "11272192 + 128 K"
+            },
+            "exact_when": "Substitute the frozen shared ontology class count K."
+          }
+        }
+      },
+      "family_teacher": {
+        "class_symbol": "K",
+        "parameters": null,
+        "parameter_formula": {
+          "intercept": 39104,
+          "per_class": 129,
+          "display": "39104 + 129 K"
+        },
+        "macs": null,
+        "mac_formula": {
+          "intercept": 2818048,
+          "per_class": 128,
+          "display": "2818048 + 128 K"
+        },
+        "exact_when": "Substitute the frozen shared ontology class count K."
+      },
+      "early_fusion_width32_reference": {
+        "class_symbol": "K",
+        "parameters": null,
+        "parameter_formula": {
+          "intercept": 307264,
+          "per_class": 129,
+          "display": "307264 + 129 K"
+        },
+        "macs": null,
+        "mac_formula": {
+          "intercept": 12353536,
+          "per_class": 128,
+          "display": "12353536 + 128 K"
+        },
+        "exact_when": "Substitute the frozen shared ontology class count K."
+      }
+    },
+    "real_run_only": {
+      "dataset_eligibility": null,
+      "shared_ontology_and_class_count_K": null,
+      "recording_group_and_class_counts": null,
+      "source_fitted_normalizers": null,
+      "source_frozen_cyclic_frequency_values": null,
+      "source_selected_active_family_count_A": null,
+      "capacity_matched_early_fusion_width": null,
+      "trained_checkpoint_parameters_if_selection_changes_topology": null,
+      "representation_and_model_latency": null,
+      "peak_memory_and_energy": null,
+      "recognition_detection_robustness_and_calibration_metrics": null,
+      "confidence_intervals_effect_sizes_and_p_values": null,
+      "H1_H4_and_M1_decisions": null
+    }
+  },
+  "held_domain": {
+    "folds": [
+      {
+        "fold_id": "held_domain=<dataset>",
+        "held_domain": null,
+        "conditions": {
+          "raw_iq_cnn": {
+            "condition_id": "raw_iq_cnn",
+            "seed_results": [
+              {
+                "seed": null,
+                "recording_count": null,
+                "recording_ids": null,
+                "recording_truth": null,
+                "recording_prediction": null,
+                "recording_probabilities": null,
+                "macro_f1": null,
+                "balanced_accuracy": null,
+                "confusion_matrix": null,
+                "per_class": null,
+                "calibration": {
+                  "ece": null,
+                  "brier": null,
+                  "nll": null
+                },
+                "detection": {
+                  "auroc": null,
+                  "auprc": null,
+                  "far": null,
+                  "miss_rate": null,
+                  "threshold": null
+                },
+                "mean_gate_weights": null
+              }
+            ],
+            "aggregate": null,
+            "cost": {
+              "parameters": null,
+              "macs": null,
+              "latency_ms": null,
+              "tensor_bytes": null,
+              "representation_latency_ms": null,
+              "model_latency_ms": null,
+              "peak_memory_bytes": null
+            }
+          },
+          "patch_transformer": {
+            "condition_id": "patch_transformer",
+            "seed_results": [
+              {
+                "seed": null,
+                "recording_count": null,
+                "recording_ids": null,
+                "recording_truth": null,
+                "recording_prediction": null,
+                "recording_probabilities": null,
+                "macro_f1": null,
+                "balanced_accuracy": null,
+                "confusion_matrix": null,
+                "per_class": null,
+                "calibration": {
+                  "ece": null,
+                  "brier": null,
+                  "nll": null
+                },
+                "detection": {
+                  "auroc": null,
+                  "auprc": null,
+                  "far": null,
+                  "miss_rate": null,
+                  "threshold": null
+                },
+                "mean_gate_weights": null
+              }
+            ],
+            "aggregate": null,
+            "cost": {
+              "parameters": null,
+              "macs": null,
+              "latency_ms": null,
+              "tensor_bytes": null,
+              "representation_latency_ms": null,
+              "model_latency_ms": null,
+              "peak_memory_bytes": null
+            }
+          },
+          "magnitude_phase_cnn": {
+            "condition_id": "magnitude_phase_cnn",
+            "seed_results": [
+              {
+                "seed": null,
+                "recording_count": null,
+                "recording_ids": null,
+                "recording_truth": null,
+                "recording_prediction": null,
+                "recording_probabilities": null,
+                "macro_f1": null,
+                "balanced_accuracy": null,
+                "confusion_matrix": null,
+                "per_class": null,
+                "calibration": {
+                  "ece": null,
+                  "brier": null,
+                  "nll": null
+                },
+                "detection": {
+                  "auroc": null,
+                  "auprc": null,
+                  "far": null,
+                  "miss_rate": null,
+                  "threshold": null
+                },
+                "mean_gate_weights": null
+              }
+            ],
+            "aggregate": null,
+            "cost": {
+              "parameters": null,
+              "macs": null,
+              "latency_ms": null,
+              "tensor_bytes": null,
+              "representation_latency_ms": null,
+              "model_latency_ms": null,
+              "peak_memory_bytes": null
+            }
+          },
+          "log_stft_cnn": {
+            "condition_id": "log_stft_cnn",
+            "seed_results": [
+              {
+                "seed": null,
+                "recording_count": null,
+                "recording_ids": null,
+                "recording_truth": null,
+                "recording_prediction": null,
+                "recording_probabilities": null,
+                "macro_f1": null,
+                "balanced_accuracy": null,
+                "confusion_matrix": null,
+                "per_class": null,
+                "calibration": {
+                  "ece": null,
+                  "brier": null,
+                  "nll": null
+                },
+                "detection": {
+                  "auroc": null,
+                  "auprc": null,
+                  "far": null,
+                  "miss_rate": null,
+                  "threshold": null
+                },
+                "mean_gate_weights": null
+              }
+            ],
+            "aggregate": null,
+            "cost": {
+              "parameters": null,
+              "macs": null,
+              "latency_ms": null,
+              "tensor_bytes": null,
+              "representation_latency_ms": null,
+              "model_latency_ms": null,
+              "peak_memory_bytes": null
+            }
+          },
+          "cwt_cnn": {
+            "condition_id": "cwt_cnn",
+            "seed_results": [
+              {
+                "seed": null,
+                "recording_count": null,
+                "recording_ids": null,
+                "recording_truth": null,
+                "recording_prediction": null,
+                "recording_probabilities": null,
+                "macro_f1": null,
+                "balanced_accuracy": null,
+                "confusion_matrix": null,
+                "per_class": null,
+                "calibration": {
+                  "ece": null,
+                  "brier": null,
+                  "nll": null
+                },
+                "detection": {
+                  "auroc": null,
+                  "auprc": null,
+                  "far": null,
+                  "miss_rate": null,
+                  "threshold": null
+                },
+                "mean_gate_weights": null
+              }
+            ],
+            "aggregate": null,
+            "cost": {
+              "parameters": null,
+              "macs": null,
+              "latency_ms": null,
+              "tensor_bytes": null,
+              "representation_latency_ms": null,
+              "model_latency_ms": null,
+              "peak_memory_bytes": null
+            }
+          },
+          "wst_only": {
+            "condition_id": "wst_only",
+            "seed_results": [
+              {
+                "seed": null,
+                "recording_count": null,
+                "recording_ids": null,
+                "recording_truth": null,
+                "recording_prediction": null,
+                "recording_probabilities": null,
+                "macro_f1": null,
+                "balanced_accuracy": null,
+                "confusion_matrix": null,
+                "per_class": null,
+                "calibration": {
+                  "ece": null,
+                  "brier": null,
+                  "nll": null
+                },
+                "detection": {
+                  "auroc": null,
+                  "auprc": null,
+                  "far": null,
+                  "miss_rate": null,
+                  "threshold": null
+                },
+                "mean_gate_weights": null
+              }
+            ],
+            "aggregate": null,
+            "cost": {
+              "parameters": null,
+              "macs": null,
+              "latency_ms": null,
+              "tensor_bytes": null,
+              "representation_latency_ms": null,
+              "model_latency_ms": null,
+              "peak_memory_bytes": null
+            }
+          },
+          "cyclic_only": {
+            "condition_id": "cyclic_only",
+            "seed_results": [
+              {
+                "seed": null,
+                "recording_count": null,
+                "recording_ids": null,
+                "recording_truth": null,
+                "recording_prediction": null,
+                "recording_probabilities": null,
+                "macro_f1": null,
+                "balanced_accuracy": null,
+                "confusion_matrix": null,
+                "per_class": null,
+                "calibration": {
+                  "ece": null,
+                  "brier": null,
+                  "nll": null
+                },
+                "detection": {
+                  "auroc": null,
+                  "auprc": null,
+                  "far": null,
+                  "miss_rate": null,
+                  "threshold": null
+                },
+                "mean_gate_weights": null
+              }
+            ],
+            "aggregate": null,
+            "cost": {
+              "parameters": null,
+              "macs": null,
+              "latency_ms": null,
+              "tensor_bytes": null,
+              "representation_latency_ms": null,
+              "model_latency_ms": null,
+              "peak_memory_bytes": null
+            }
+          },
+          "stft_dct_xgboost": {
+            "condition_id": "stft_dct_xgboost",
+            "seed_results": [
+              {
+                "seed": null,
+                "recording_count": null,
+                "recording_ids": null,
+                "recording_truth": null,
+                "recording_prediction": null,
+                "recording_probabilities": null,
+                "macro_f1": null,
+                "balanced_accuracy": null,
+                "confusion_matrix": null,
+                "per_class": null,
+                "calibration": {
+                  "ece": null,
+                  "brier": null,
+                  "nll": null
+                },
+                "detection": {
+                  "auroc": null,
+                  "auprc": null,
+                  "far": null,
+                  "miss_rate": null,
+                  "threshold": null
+                },
+                "mean_gate_weights": null
+              }
+            ],
+            "aggregate": null,
+            "cost": {
+              "parameters": null,
+              "macs": null,
+              "latency_ms": null,
+              "tensor_bytes": null,
+              "representation_latency_ms": null,
+              "model_latency_ms": null,
+              "peak_memory_bytes": null
+            }
+          },
+          "fixed_wavelet_subbands": {
+            "condition_id": "fixed_wavelet_subbands",
+            "seed_results": [
+              {
+                "seed": null,
+                "recording_count": null,
+                "recording_ids": null,
+                "recording_truth": null,
+                "recording_prediction": null,
+                "recording_probabilities": null,
+                "macro_f1": null,
+                "balanced_accuracy": null,
+                "confusion_matrix": null,
+                "per_class": null,
+                "calibration": {
+                  "ece": null,
+                  "brier": null,
+                  "nll": null
+                },
+                "detection": {
+                  "auroc": null,
+                  "auprc": null,
+                  "far": null,
+                  "miss_rate": null,
+                  "threshold": null
+                },
+                "mean_gate_weights": null
+              }
+            ],
+            "aggregate": null,
+            "cost": {
+              "parameters": null,
+              "macs": null,
+              "latency_ms": null,
+              "tensor_bytes": null,
+              "representation_latency_ms": null,
+              "model_latency_ms": null,
+              "peak_memory_bytes": null
+            }
+          },
+          "log_psd_sobel": {
+            "condition_id": "log_psd_sobel",
+            "seed_results": [
+              {
+                "seed": null,
+                "recording_count": null,
+                "recording_ids": null,
+                "recording_truth": null,
+                "recording_prediction": null,
+                "recording_probabilities": null,
+                "macro_f1": null,
+                "balanced_accuracy": null,
+                "confusion_matrix": null,
+                "per_class": null,
+                "calibration": {
+                  "ece": null,
+                  "brier": null,
+                  "nll": null
+                },
+                "detection": {
+                  "auroc": null,
+                  "auprc": null,
+                  "far": null,
+                  "miss_rate": null,
+                  "threshold": null
+                },
+                "mean_gate_weights": null
+              }
+            ],
+            "aggregate": null,
+            "cost": {
+              "parameters": null,
+              "macs": null,
+              "latency_ms": null,
+              "tensor_bytes": null,
+              "representation_latency_ms": null,
+              "model_latency_ms": null,
+              "peak_memory_bytes": null
+            }
+          },
+          "early_fusion_resnet": {
+            "condition_id": "early_fusion_resnet",
+            "seed_results": [
+              {
+                "seed": null,
+                "recording_count": null,
+                "recording_ids": null,
+                "recording_truth": null,
+                "recording_prediction": null,
+                "recording_probabilities": null,
+                "macro_f1": null,
+                "balanced_accuracy": null,
+                "confusion_matrix": null,
+                "per_class": null,
+                "calibration": {
+                  "ece": null,
+                  "brier": null,
+                  "nll": null
+                },
+                "detection": {
+                  "auroc": null,
+                  "auprc": null,
+                  "far": null,
+                  "miss_rate": null,
+                  "threshold": null
+                },
+                "mean_gate_weights": null
+              }
+            ],
+            "aggregate": null,
+            "cost": {
+              "parameters": null,
+              "macs": null,
+              "latency_ms": null,
+              "tensor_bytes": null,
+              "representation_latency_ms": null,
+              "model_latency_ms": null,
+              "peak_memory_bytes": null
+            }
+          },
+          "uniform_late_fusion": {
+            "condition_id": "uniform_late_fusion",
+            "seed_results": [
+              {
+                "seed": null,
+                "recording_count": null,
+                "recording_ids": null,
+                "recording_truth": null,
+                "recording_prediction": null,
+                "recording_probabilities": null,
+                "macro_f1": null,
+                "balanced_accuracy": null,
+                "confusion_matrix": null,
+                "per_class": null,
+                "calibration": {
+                  "ece": null,
+                  "brier": null,
+                  "nll": null
+                },
+                "detection": {
+                  "auroc": null,
+                  "auprc": null,
+                  "far": null,
+                  "miss_rate": null,
+                  "threshold": null
+                },
+                "mean_gate_weights": null
+              }
+            ],
+            "aggregate": null,
+            "cost": {
+              "parameters": null,
+              "macs": null,
+              "latency_ms": null,
+              "tensor_bytes": null,
+              "representation_latency_ms": null,
+              "model_latency_ms": null,
+              "peak_memory_bytes": null
+            }
+          },
+          "ordinary_gate": {
+            "condition_id": "ordinary_gate",
+            "seed_results": [
+              {
+                "seed": null,
+                "recording_count": null,
+                "recording_ids": null,
+                "recording_truth": null,
+                "recording_prediction": null,
+                "recording_probabilities": null,
+                "macro_f1": null,
+                "balanced_accuracy": null,
+                "confusion_matrix": null,
+                "per_class": null,
+                "calibration": {
+                  "ece": null,
+                  "brier": null,
+                  "nll": null
+                },
+                "detection": {
+                  "auroc": null,
+                  "auprc": null,
+                  "far": null,
+                  "miss_rate": null,
+                  "threshold": null
+                },
+                "mean_gate_weights": null
+              }
+            ],
+            "aggregate": null,
+            "cost": {
+              "parameters": null,
+              "macs": null,
+              "latency_ms": null,
+              "tensor_bytes": null,
+              "representation_latency_ms": null,
+              "model_latency_ms": null,
+              "peak_memory_bytes": null
+            }
+          },
+          "shuffled_pcrd": {
+            "condition_id": "shuffled_pcrd",
+            "seed_results": [
+              {
+                "seed": null,
+                "recording_count": null,
+                "recording_ids": null,
+                "recording_truth": null,
+                "recording_prediction": null,
+                "recording_probabilities": null,
+                "macro_f1": null,
+                "balanced_accuracy": null,
+                "confusion_matrix": null,
+                "per_class": null,
+                "calibration": {
+                  "ece": null,
+                  "brier": null,
+                  "nll": null
+                },
+                "detection": {
+                  "auroc": null,
+                  "auprc": null,
+                  "far": null,
+                  "miss_rate": null,
+                  "threshold": null
+                },
+                "mean_gate_weights": null
+              }
+            ],
+            "aggregate": null,
+            "cost": {
+              "parameters": null,
+              "macs": null,
+              "latency_ms": null,
+              "tensor_bytes": null,
+              "representation_latency_ms": null,
+              "model_latency_ms": null,
+              "peak_memory_bytes": null
+            }
+          },
+          "pcrd": {
+            "condition_id": "pcrd",
+            "seed_results": [
+              {
+                "seed": null,
+                "recording_count": null,
+                "recording_ids": null,
+                "recording_truth": null,
+                "recording_prediction": null,
+                "recording_probabilities": null,
+                "macro_f1": null,
+                "balanced_accuracy": null,
+                "confusion_matrix": null,
+                "per_class": null,
+                "calibration": {
+                  "ece": null,
+                  "brier": null,
+                  "nll": null
+                },
+                "detection": {
+                  "auroc": null,
+                  "auprc": null,
+                  "far": null,
+                  "miss_rate": null,
+                  "threshold": null
+                },
+                "mean_gate_weights": null
+              }
+            ],
+            "aggregate": null,
+            "cost": {
+              "parameters": null,
+              "macs": null,
+              "latency_ms": null,
+              "tensor_bytes": null,
+              "representation_latency_ms": null,
+              "model_latency_ms": null,
+              "peak_memory_bytes": null
+            }
+          }
+        }
+      }
+    ],
+    "focal_condition_id": "wst_cyclic_resolution_16",
+    "focal_average_macro_f1": null,
+    "focal_worst_macro_f1": null,
+    "selected_average_macro_f1": null,
+    "selected_worst_macro_f1": null,
+    "average_macro_f1": null,
+    "worst_macro_f1": null
+  },
+  "baselines": {
+    "folds": null,
+    "condition_ids": [
+      "raw_iq_cnn",
+      "patch_transformer",
+      "magnitude_phase_cnn",
+      "log_stft_cnn",
+      "cwt_cnn",
+      "wst_only",
+      "cyclic_only",
+      "stft_dct_xgboost",
+      "fixed_wavelet_subbands",
+      "log_psd_sobel",
+      "early_fusion_resnet",
+      "uniform_late_fusion",
+      "ordinary_gate",
+      "shuffled_pcrd",
+      "pcrd"
+    ],
+    "source_only": true,
+    "target_tuning": false
+  },
+  "ablations": {
+    "channel_masks": [
+      "W",
+      "C",
+      "W+C",
+      "W+C+E",
+      "W+C+E+S",
+      "active_minus_W",
+      "active_minus_C",
+      "active_minus_E",
+      "active_minus_S"
+    ],
+    "resolution": [
+      "resolution_8",
+      "resolution_16",
+      "resolution_32"
+    ],
+    "controls": [
+      "cyclic_permuted",
+      "norm_percentile",
+      "norm_zscore",
+      "norm_none",
+      "selection_scalar",
+      "selection_pareto"
+    ],
+    "condition_ids": [
+      "W",
+      "C",
+      "W+C",
+      "W+C+E",
+      "W+C+E+S",
+      "active_minus_W",
+      "active_minus_C",
+      "active_minus_E",
+      "active_minus_S",
+      "wst_J3Q1",
+      "wst_J3Q2",
+      "wst_J3Q4",
+      "wst_J4Q1",
+      "wst_J4Q2",
+      "wst_J4Q4",
+      "wst_J5Q1",
+      "wst_J5Q2",
+      "wst_J5Q4",
+      "cyclic_A4",
+      "cyclic_A8",
+      "cyclic_A16",
+      "cyclic_permuted",
+      "norm_percentile",
+      "norm_zscore",
+      "norm_none",
+      "resolution_8",
+      "resolution_16",
+      "resolution_32",
+      "selection_scalar",
+      "selection_pareto"
+    ],
+    "folds": null,
+    "degeneracy": {
+      "cosine": null,
+      "nmae": null,
+      "thresholds": null,
+      "flags": null
+    },
+    "domain_probe": null
+  },
+  "detection": {
+    "eligibility": null,
+    "folds": null,
+    "threshold_source": "source-validation-frozen",
+    "summary": {
+      "auroc": null,
+      "auprc": null,
+      "far": null,
+      "miss_rate": null
+    }
+  },
+  "robustness": {
+    "snr": {
+      "grid_db": [
+        20,
+        10,
+        0,
+        -10
+      ],
+      "curves": null
+    },
+    "sir": {
+      "grid_db": [
+        20,
+        10,
+        0,
+        -10
+      ],
+      "curves": null
+    },
+    "nuisance_sweeps": null,
+    "normalized_curve_auc": {
+      "pcrd": {
+        "snr": null,
+        "sir": null
+      },
+      "wst_only": {
+        "snr": null,
+        "sir": null
+      },
+      "cyclic_only": {
+        "snr": null,
+        "sir": null
+      },
+      "log_stft_cnn": {
+        "snr": null,
+        "sir": null
+      }
+    }
+  },
+  "costs": {
+    "conditions": {
+      "raw_iq_cnn": {
+        "parameters": null,
+        "macs": null,
+        "latency_ms": null,
+        "tensor_bytes": null,
+        "representation_latency_ms": null,
+        "model_latency_ms": null,
+        "peak_memory_bytes": null,
+        "energy_joules": null,
+        "static_parameter_formula": {
+          "intercept": 56320,
+          "per_class": 129,
+          "display": "56320 + 129 K"
+        },
+        "static_mac_formula": {
+          "intercept": 73662464,
+          "per_class": 128,
+          "display": "73662464 + 128 K"
+        },
+        "static_scope_note": "Exact architecture formula before training; K remains data-contract dependent."
+      },
+      "patch_transformer": {
+        "parameters": null,
+        "macs": null,
+        "latency_ms": null,
+        "tensor_bytes": null,
+        "representation_latency_ms": null,
+        "model_latency_ms": null,
+        "peak_memory_bytes": null,
+        "energy_joules": null,
+        "static_parameter_formula": {
+          "intercept": 534400,
+          "per_class": 129,
+          "display": "534400 + 129 K"
+        },
+        "static_mac_formula": {
+          "intercept": 8683520,
+          "per_class": 128,
+          "display": "8683520 + 128 K"
+        },
+        "static_scope_note": "Exact architecture formula before training; K remains data-contract dependent."
+      },
+      "magnitude_phase_cnn": {
+        "parameters": null,
+        "macs": null,
+        "latency_ms": null,
+        "tensor_bytes": null,
+        "representation_latency_ms": null,
+        "model_latency_ms": null,
+        "peak_memory_bytes": null,
+        "energy_joules": null,
+        "static_parameter_formula": {
+          "intercept": 56320,
+          "per_class": 129,
+          "display": "56320 + 129 K"
+        },
+        "static_mac_formula": {
+          "intercept": 73662464,
+          "per_class": 128,
+          "display": "73662464 + 128 K"
+        },
+        "static_scope_note": "Exact architecture formula before training; K remains data-contract dependent."
+      },
+      "log_stft_cnn": {
+        "parameters": null,
+        "macs": null,
+        "latency_ms": null,
+        "tensor_bytes": null,
+        "representation_latency_ms": null,
+        "model_latency_ms": null,
+        "peak_memory_bytes": null,
+        "energy_joules": null,
+        "static_parameter_formula": {
+          "intercept": 306400,
+          "per_class": 129,
+          "display": "306400 + 129 K"
+        },
+        "static_mac_formula": {
+          "intercept": 12132352,
+          "per_class": 128,
+          "display": "12132352 + 128 K"
+        },
+        "static_scope_note": "Exact architecture formula before training; K remains data-contract dependent."
+      },
+      "cwt_cnn": {
+        "parameters": null,
+        "macs": null,
+        "latency_ms": null,
+        "tensor_bytes": null,
+        "representation_latency_ms": null,
+        "model_latency_ms": null,
+        "peak_memory_bytes": null,
+        "energy_joules": null,
+        "static_parameter_formula": {
+          "intercept": 306400,
+          "per_class": 129,
+          "display": "306400 + 129 K"
+        },
+        "static_mac_formula": {
+          "intercept": 12132352,
+          "per_class": 128,
+          "display": "12132352 + 128 K"
+        },
+        "static_scope_note": "Exact architecture formula before training; K remains data-contract dependent."
+      },
+      "wst_only": {
+        "parameters": null,
+        "macs": null,
+        "latency_ms": null,
+        "tensor_bytes": null,
+        "representation_latency_ms": null,
+        "model_latency_ms": null,
+        "peak_memory_bytes": null,
+        "energy_joules": null,
+        "static_parameter_formula": {
+          "intercept": 306400,
+          "per_class": 129,
+          "display": "306400 + 129 K"
+        },
+        "static_mac_formula": {
+          "intercept": 12132352,
+          "per_class": 128,
+          "display": "12132352 + 128 K"
+        },
+        "static_scope_note": "Exact architecture formula before training; K remains data-contract dependent."
+      },
+      "cyclic_only": {
+        "parameters": null,
+        "macs": null,
+        "latency_ms": null,
+        "tensor_bytes": null,
+        "representation_latency_ms": null,
+        "model_latency_ms": null,
+        "peak_memory_bytes": null,
+        "energy_joules": null,
+        "static_parameter_formula": {
+          "intercept": 306400,
+          "per_class": 129,
+          "display": "306400 + 129 K"
+        },
+        "static_mac_formula": {
+          "intercept": 12132352,
+          "per_class": 128,
+          "display": "12132352 + 128 K"
+        },
+        "static_scope_note": "Exact architecture formula before training; K remains data-contract dependent."
+      },
+      "stft_dct_xgboost": {
+        "parameters": null,
+        "macs": null,
+        "latency_ms": null,
+        "tensor_bytes": null,
+        "representation_latency_ms": null,
+        "model_latency_ms": null,
+        "peak_memory_bytes": null,
+        "energy_joules": null,
+        "static_parameter_formula": null,
+        "static_mac_formula": null,
+        "static_scope_note": null
+      },
+      "fixed_wavelet_subbands": {
+        "parameters": null,
+        "macs": null,
+        "latency_ms": null,
+        "tensor_bytes": null,
+        "representation_latency_ms": null,
+        "model_latency_ms": null,
+        "peak_memory_bytes": null,
+        "energy_joules": null,
+        "static_parameter_formula": null,
+        "static_mac_formula": null,
+        "static_scope_note": null
+      },
+      "log_psd_sobel": {
+        "parameters": null,
+        "macs": null,
+        "latency_ms": null,
+        "tensor_bytes": null,
+        "representation_latency_ms": null,
+        "model_latency_ms": null,
+        "peak_memory_bytes": null,
+        "energy_joules": null,
+        "static_parameter_formula": {
+          "intercept": 306976,
+          "per_class": 129,
+          "display": "306976 + 129 K"
+        },
+        "static_mac_formula": {
+          "intercept": 12279808,
+          "per_class": 128,
+          "display": "12279808 + 128 K"
+        },
+        "static_scope_note": "Exact architecture formula before training; K remains data-contract dependent."
+      },
+      "early_fusion_resnet": {
+        "parameters": null,
+        "macs": null,
+        "latency_ms": null,
+        "tensor_bytes": null,
+        "representation_latency_ms": null,
+        "model_latency_ms": null,
+        "peak_memory_bytes": null,
+        "energy_joules": null,
+        "static_parameter_formula": {
+          "intercept": 307264,
+          "per_class": 129,
+          "display": "307264 + 129 K"
+        },
+        "static_mac_formula": {
+          "intercept": 12353536,
+          "per_class": 128,
+          "display": "12353536 + 128 K"
+        },
+        "static_scope_note": "Topology profile at base_width=32; the reported early-fusion row remains null until the capacity-matched width is frozen."
+      },
+      "uniform_late_fusion": {
+        "parameters": null,
+        "macs": null,
+        "latency_ms": null,
+        "tensor_bytes": null,
+        "representation_latency_ms": null,
+        "model_latency_ms": null,
+        "peak_memory_bytes": null,
+        "energy_joules": null,
+        "static_parameter_formula": {
+          "intercept": 156416,
+          "per_class": 129,
+          "display": "156416 + 129 K"
+        },
+        "static_mac_formula": {
+          "intercept": 11272192,
+          "per_class": 128,
+          "display": "11272192 + 128 K"
+        },
+        "static_scope_note": "Exact architecture formula before training; K remains data-contract dependent."
+      },
+      "ordinary_gate": {
+        "parameters": null,
+        "macs": null,
+        "latency_ms": null,
+        "tensor_bytes": null,
+        "representation_latency_ms": null,
+        "model_latency_ms": null,
+        "peak_memory_bytes": null,
+        "energy_joules": null,
+        "static_parameter_formula": {
+          "intercept": 222596,
+          "per_class": 129,
+          "display": "222596 + 129 K"
+        },
+        "static_mac_formula": {
+          "intercept": 11338240,
+          "per_class": 128,
+          "display": "11338240 + 128 K"
+        },
+        "static_scope_note": "Exact architecture formula before training; K remains data-contract dependent."
+      },
+      "shuffled_pcrd": {
+        "parameters": null,
+        "macs": null,
+        "latency_ms": null,
+        "tensor_bytes": null,
+        "representation_latency_ms": null,
+        "model_latency_ms": null,
+        "peak_memory_bytes": null,
+        "energy_joules": null,
+        "static_parameter_formula": {
+          "intercept": 222596,
+          "per_class": 129,
+          "display": "222596 + 129 K"
+        },
+        "static_mac_formula": {
+          "intercept": 11338240,
+          "per_class": 128,
+          "display": "11338240 + 128 K"
+        },
+        "static_scope_note": "Exact architecture formula before training; K remains data-contract dependent."
+      },
+      "pcrd": {
+        "parameters": null,
+        "macs": null,
+        "latency_ms": null,
+        "tensor_bytes": null,
+        "representation_latency_ms": null,
+        "model_latency_ms": null,
+        "peak_memory_bytes": null,
+        "energy_joules": null,
+        "static_parameter_formula": {
+          "intercept": 222596,
+          "per_class": 129,
+          "display": "222596 + 129 K"
+        },
+        "static_mac_formula": {
+          "intercept": 11338240,
+          "per_class": 128,
+          "display": "11338240 + 128 K"
+        },
+        "static_scope_note": "Exact architecture formula before training; K remains data-contract dependent."
+      }
+    },
+    "measurement_manifest": null
+  },
+  "statistics": {
+    "decision_engine_version": null,
+    "h1": null,
+    "h2": null,
+    "h3": null,
+    "h4": null,
+    "block_bootstrap": {
+      "unit": "recording/event",
+      "confidence_level": 0.95,
+      "results": null
+    },
+    "holm": null,
+    "registered_resamples": 10000,
+    "seed_variability": null,
+    "permutation_tests": null,
+    "effect_sizes": null
+  },
+  "leakage_audits": {
+    "duplicates": null,
+    "near_duplicates": null,
+    "temporal": null,
+    "source_record_overlap": null,
+    "domain_probe": null,
+    "label_shuffle": null,
+    "background_only": null,
+    "target_firewall": null
+  },
+  "hypotheses": {
+    "H1": {
+      "estimand": null,
+      "estimate": null,
+      "raw_p": null,
+      "holm_p": null,
+      "status": "open",
+      "decision": null,
+      "reason": "real confirmatory evidence absent"
+    },
+    "H2": {
+      "estimand": null,
+      "estimate": null,
+      "raw_p": null,
+      "holm_p": null,
+      "status": "open",
+      "decision": null,
+      "reason": "real confirmatory evidence absent"
+    },
+    "H3": {
+      "estimand": null,
+      "estimate": null,
+      "raw_p": null,
+      "holm_p": null,
+      "status": "open",
+      "decision": null,
+      "reason": "real confirmatory evidence absent"
+    },
+    "H4": {
+      "estimand": null,
+      "estimate": null,
+      "raw_p": null,
+      "holm_p": null,
+      "status": "open",
+      "decision": null,
+      "reason": "real confirmatory evidence absent"
+    }
+  },
+  "warnings": [
+    "SCHEMA DEMO ONLY: no empirical value in this file may be cited as a result.",
+    "H1-H4 remain open until the validated real-confirmatory campaign is complete."
+  ],
+  "registry": {
+    "recognition_conditions": [
+      "raw_iq_cnn",
+      "patch_transformer",
+      "magnitude_phase_cnn",
+      "log_stft_cnn",
+      "cwt_cnn",
+      "wst_only",
+      "cyclic_only",
+      "stft_dct_xgboost",
+      "fixed_wavelet_subbands",
+      "log_psd_sobel",
+      "early_fusion_resnet",
+      "uniform_late_fusion",
+      "ordinary_gate",
+      "shuffled_pcrd",
+      "pcrd"
+    ],
+    "recognition_row_fields": [
+      "condition_id",
+      "held_domain",
+      "recording_count",
+      "mean_macro_f1",
+      "ci95_low",
+      "ci95_high",
+      "worst_domain_macro_f1",
+      "balanced_accuracy",
+      "parameters",
+      "macs",
+      "latency_ms",
+      "tensor_bytes",
+      "representation_latency_ms",
+      "model_latency_ms",
+      "peak_memory_bytes"
+    ],
+    "ablation_conditions": [
+      "W",
+      "C",
+      "W+C",
+      "W+C+E",
+      "W+C+E+S",
+      "active_minus_W",
+      "active_minus_C",
+      "active_minus_E",
+      "active_minus_S",
+      "wst_J3Q1",
+      "wst_J3Q2",
+      "wst_J3Q4",
+      "wst_J4Q1",
+      "wst_J4Q2",
+      "wst_J4Q4",
+      "wst_J5Q1",
+      "wst_J5Q2",
+      "wst_J5Q4",
+      "cyclic_A4",
+      "cyclic_A8",
+      "cyclic_A16",
+      "cyclic_permuted",
+      "norm_percentile",
+      "norm_zscore",
+      "norm_none",
+      "resolution_8",
+      "resolution_16",
+      "resolution_32",
+      "selection_scalar",
+      "selection_pareto"
+    ],
+    "ablation_row_fields": [
+      "condition_id",
+      "held_domain",
+      "recording_count",
+      "mean_macro_f1",
+      "ci95_low",
+      "ci95_high",
+      "delta_vs_pcrd",
+      "delta_ci95_low",
+      "delta_ci95_high",
+      "cosine",
+      "nmae",
+      "domain_probe_accuracy",
+      "parameters",
+      "macs",
+      "latency_ms",
+      "interpretation"
+    ],
+    "external_sota_conditions": [
+      "open_rfnet",
+      "asa",
+      "avoiding_shortcuts",
+      "riei",
+      "mtl_sei",
+      "mcaff",
+      "s3r",
+      "rff_llm"
+    ],
+    "figure_series_fields": [
+      "series_id",
+      "panel_id",
+      "x_name",
+      "x_unit",
+      "x",
+      "y_name",
+      "y_unit",
+      "y",
+      "ci95_low",
+      "ci95_high",
+      "recording_support",
+      "held_domain"
+    ],
+    "confusion_panel_fields": [
+      "panel_id",
+      "condition_id",
+      "held_domain",
+      "class_labels",
+      "matrix",
+      "recording_support"
+    ],
+    "calibration_panel_fields": [
+      "panel_id",
+      "condition_id",
+      "held_domain",
+      "confidence",
+      "empirical_accuracy",
+      "ci95_low",
+      "ci95_high",
+      "bin_support",
+      "ece",
+      "brier",
+      "nll"
+    ],
+    "routing_panel_fields": [
+      "panel_id",
+      "nuisance",
+      "severity",
+      "family",
+      "weights",
+      "recording_ids",
+      "entropy",
+      "relation_coverage"
+    ],
+    "selection_h2_panel_fields": [
+      "panel_id",
+      "configuration_id",
+      "source_instability",
+      "source_macro_f1",
+      "cost",
+      "feasible",
+      "pareto",
+      "selected",
+      "h2_residual_instability",
+      "h2_residual_degradation",
+      "held_domain"
+    ],
+    "allowed_status": [
+      "open",
+      "supported",
+      "partial",
+      "negative",
+      "untestable",
+      "descriptive"
+    ],
+    "required_seeds": [
+      11,
+      23,
+      37,
+      53,
+      71
+    ],
+    "semantic_paths": {
+      "primary_metric": "tables.tab_primary_results.rows[condition_id=pcrd].mean_macro_f1",
+      "worst_domain_macro_f1": "tables.tab_primary_results.rows[condition_id=pcrd].worst_domain_macro_f1",
+      "detection_auroc": "detection.summary.auroc",
+      "robustness_snr_auc": "robustness.normalized_curve_auc.pcrd.snr",
+      "robustness_sir_auc": "robustness.normalized_curve_auc.pcrd.sir",
+      "m1_status": "mechanism.m1.status",
+      "hypotheses": "hypotheses.{H1,H2,H3,H4}",
+      "table_rows": {
+        "tab_datasets": "tables.tab_datasets.rows[*]",
+        "tab_channel_contract": "tables.tab_channel_contract.rows[*]",
+        "tab_baselines": "tables.tab_baselines.rows[*]",
+        "tab_external_sota": "tables.tab_external_sota.rows[*]",
+        "tab_primary_results": "tables.tab_primary_results.rows[*]",
+        "tab_m1": "tables.tab_m1.rows[*]",
+        "tab_ablations": "tables.tab_ablations.rows[*]",
+        "tab_robustness": "tables.tab_robustness.rows[*]",
+        "tab_detection": "tables.tab_detection.rows[*]",
+        "tab_per_class": "tables.tab_per_class.rows[*]",
+        "tab_routing_calibration": "tables.tab_routing_calibration.rows[*]",
+        "tab_hypotheses": "tables.tab_hypotheses.rows[*]",
+        "tab_integrity": "tables.tab_integrity.rows[*]"
+      },
+      "table_fields": {
+        "tab_datasets": {
+          "path": "tables.tab_datasets.rows[*]",
+          "fields": [
+            "dataset_id",
+            "recording_count",
+            "group_count",
+            "class_count",
+            "has_background",
+            "split_axes",
+            "eligibility",
+            "license",
+            "checksum_manifest"
+          ]
+        },
+        "tab_channel_contract": {
+          "path": "tables.tab_channel_contract.rows[*]",
+          "fields": [
+            "family",
+            "dtype",
+            "shape",
+            "model_input"
+          ]
+        },
+        "tab_baselines": {
+          "path": "tables.tab_baselines.rows[*]",
+          "fields": [
+            "condition_id",
+            "source_only",
+            "target_tuning"
+          ]
+        },
+        "tab_external_sota": {
+          "path": "tables.tab_external_sota.rows[*]",
+          "fields": [
+            "condition_id",
+            "eligibility",
+            "ineligibility_reason",
+            "target_privilege",
+            "native_input",
+            "observation_samples",
+            "recording_count",
+            "mean_macro_f1",
+            "ci95_low",
+            "ci95_high",
+            "worst_domain_macro_f1",
+            "parameters",
+            "macs",
+            "latency_ms"
+          ]
+        },
+        "tab_primary_results": {
+          "path": "tables.tab_primary_results.rows[*]",
+          "fields": [
+            "condition_id",
+            "held_domain",
+            "recording_count",
+            "mean_macro_f1",
+            "ci95_low",
+            "ci95_high",
+            "worst_domain_macro_f1",
+            "balanced_accuracy",
+            "parameters",
+            "macs",
+            "latency_ms",
+            "tensor_bytes",
+            "representation_latency_ms",
+            "model_latency_ms",
+            "peak_memory_bytes"
+          ]
+        },
+        "tab_m1": {
+          "path": "tables.tab_m1.rows[*]",
+          "fields": [
+            "component",
+            "estimate",
+            "interval_or_threshold",
+            "status"
+          ]
+        },
+        "tab_ablations": {
+          "path": "tables.tab_ablations.rows[*]",
+          "fields": [
+            "condition_id",
+            "held_domain",
+            "recording_count",
+            "mean_macro_f1",
+            "ci95_low",
+            "ci95_high",
+            "delta_vs_pcrd",
+            "delta_ci95_low",
+            "delta_ci95_high",
+            "cosine",
+            "nmae",
+            "domain_probe_accuracy",
+            "parameters",
+            "macs",
+            "latency_ms",
+            "interpretation"
+          ]
+        },
+        "tab_robustness": {
+          "path": "tables.tab_robustness.rows[*]",
+          "fields": [
+            "condition_id",
+            "snr_auc",
+            "sir_auc",
+            "worst_nuisance",
+            "worst_degradation",
+            "recording_count",
+            "ci95_low",
+            "ci95_high",
+            "interpretation"
+          ]
+        },
+        "tab_detection": {
+          "path": "tables.tab_detection.rows[*]",
+          "fields": [
+            "condition_id",
+            "auroc",
+            "auprc",
+            "far",
+            "miss_rate",
+            "ci95",
+            "recording_count",
+            "threshold",
+            "interpretation"
+          ]
+        },
+        "tab_per_class": {
+          "path": "tables.tab_per_class.rows[*]",
+          "fields": [
+            "class_domain",
+            "precision",
+            "recall",
+            "f1",
+            "recording_support",
+            "ci95_low",
+            "ci95_high"
+          ]
+        },
+        "tab_routing_calibration": {
+          "path": "tables.tab_routing_calibration.rows[*]",
+          "fields": [
+            "diagnostic",
+            "estimate",
+            "interval_or_threshold",
+            "recording_support",
+            "interpretation"
+          ]
+        },
+        "tab_hypotheses": {
+          "path": "tables.tab_hypotheses.rows[*]",
+          "fields": [
+            "id",
+            "estimand",
+            "raw_p",
+            "holm_p",
+            "status",
+            "decision_reason"
+          ]
+        },
+        "tab_integrity": {
+          "path": "tables.tab_integrity.rows[*]",
+          "fields": [
+            "audit",
+            "status",
+            "critical",
+            "evidence_path_hash"
+          ]
+        }
+      },
+      "figure_fields": {
+        "fig_main_recognition": {
+          "path": "figures.fig_main_recognition",
+          "fields": [
+            "series_id",
+            "panel_id",
+            "x",
+            "y",
+            "ci95_low",
+            "ci95_high",
+            "recording_support",
+            "held_domain"
+          ]
+        },
+        "fig_m1_effects": {
+          "path": "figures.fig_m1_effects",
+          "fields": [
+            "series_id",
+            "panel_id",
+            "x",
+            "y",
+            "ci95_low",
+            "ci95_high",
+            "recording_support",
+            "held_domain"
+          ]
+        },
+        "fig_domain_heatmap": {
+          "path": "figures.fig_domain_heatmap",
+          "fields": [
+            "matrix",
+            "x_labels",
+            "y_labels"
+          ]
+        },
+        "fig_robustness": {
+          "path": "figures.fig_robustness",
+          "fields": [
+            "series_id",
+            "panel_id",
+            "x",
+            "y",
+            "ci95_low",
+            "ci95_high",
+            "recording_support",
+            "held_domain"
+          ]
+        },
+        "fig_routing_diagnostics": {
+          "path": "figures.fig_routing_diagnostics",
+          "fields": [
+            "panel_id",
+            "nuisance",
+            "severity",
+            "family",
+            "weights",
+            "recording_ids",
+            "entropy",
+            "relation_coverage"
+          ]
+        },
+        "fig_scars_selection_h2": {
+          "path": "figures.fig_scars_selection_h2",
+          "fields": [
+            "panel_id",
+            "configuration_id",
+            "source_instability",
+            "source_macro_f1",
+            "cost",
+            "feasible",
+            "pareto",
+            "selected",
+            "h2_residual_instability",
+            "h2_residual_degradation",
+            "held_domain"
+          ]
+        },
+        "fig_confusion_matrices": {
+          "path": "figures.fig_confusion_matrices",
+          "fields": [
+            "panel_id",
+            "condition_id",
+            "held_domain",
+            "class_labels",
+            "matrix",
+            "recording_support"
+          ]
+        },
+        "fig_calibration": {
+          "path": "figures.fig_calibration",
+          "fields": [
+            "panel_id",
+            "condition_id",
+            "held_domain",
+            "confidence",
+            "empirical_accuracy",
+            "ci95_low",
+            "ci95_high",
+            "bin_support",
+            "ece",
+            "brier",
+            "nll"
+          ]
+        },
+        "fig_compute_tradeoff": {
+          "path": "figures.fig_compute_tradeoff",
+          "fields": [
+            "series_id",
+            "panel_id",
+            "x",
+            "y",
+            "recording_support",
+            "held_domain"
+          ]
+        }
+      }
+    }
+  },
+  "eligibility": {
+    "eligible_domains": null,
+    "datasets": [
+      {
+        "dataset_id": "DroneRFa",
+        "eligible": null,
+        "reason": null
+      },
+      {
+        "dataset_id": "DroneRFb-DIR",
+        "eligible": null,
+        "reason": null
+      },
+      {
+        "dataset_id": "DRFF-R2",
+        "eligible": null,
+        "reason": null
+      }
+    ]
+  },
+  "integrity": {
+    "status": null,
+    "critical_failures": null,
+    "audits": [
+      {
+        "audit": "duplicates",
+        "status": null,
+        "critical": null,
+        "evidence_path_hash": null
+      },
+      {
+        "audit": "near_duplicates",
+        "status": null,
+        "critical": null,
+        "evidence_path_hash": null
+      },
+      {
+        "audit": "temporal",
+        "status": null,
+        "critical": null,
+        "evidence_path_hash": null
+      },
+      {
+        "audit": "source_record_overlap",
+        "status": null,
+        "critical": null,
+        "evidence_path_hash": null
+      },
+      {
+        "audit": "target_firewall",
+        "status": null,
+        "critical": null,
+        "evidence_path_hash": null
+      },
+      {
+        "audit": "label_shuffle",
+        "status": null,
+        "critical": null,
+        "evidence_path_hash": null
+      },
+      {
+        "audit": "background_only",
+        "status": null,
+        "critical": null,
+        "evidence_path_hash": null
+      }
+    ]
+  },
+  "tables": {
+    "tab_datasets": {
+      "rows": [
+        {
+          "dataset_id": "DroneRFa",
+          "recording_count": null,
+          "group_count": null,
+          "class_count": null,
+          "has_background": null,
+          "split_axes": null,
+          "eligibility": null,
+          "license": null,
+          "checksum_manifest": null
+        },
+        {
+          "dataset_id": "DroneRFb-DIR",
+          "recording_count": null,
+          "group_count": null,
+          "class_count": null,
+          "has_background": null,
+          "split_axes": null,
+          "eligibility": null,
+          "license": null,
+          "checksum_manifest": null
+        },
+        {
+          "dataset_id": "DRFF-R2",
+          "recording_count": null,
+          "group_count": null,
+          "class_count": null,
+          "has_background": null,
+          "split_axes": null,
+          "eligibility": null,
+          "license": null,
+          "checksum_manifest": null
+        }
+      ],
+      "row_fields": [
+        "dataset_id",
+        "recording_count",
+        "group_count",
+        "class_count",
+        "has_background",
+        "split_axes",
+        "eligibility",
+        "license",
+        "checksum_manifest"
+      ]
+    },
+    "tab_channel_contract": {
+      "rows": [
+        {
+          "family": "W",
+          "dtype": "float32",
+          "shape": [
+            1,
+            16,
+            16
+          ],
+          "model_input": "tensor.npy"
+        },
+        {
+          "family": "C",
+          "dtype": "float32",
+          "shape": [
+            1,
+            16,
+            16
+          ],
+          "model_input": "tensor.npy"
+        },
+        {
+          "family": "E",
+          "dtype": "float32",
+          "shape": [
+            1,
+            16,
+            16
+          ],
+          "model_input": "tensor.npy"
+        },
+        {
+          "family": "S",
+          "dtype": "float32",
+          "shape": [
+            1,
+            16,
+            16
+          ],
+          "model_input": "tensor.npy"
+        }
+      ],
+      "row_fields": [
+        "family",
+        "dtype",
+        "shape",
+        "model_input"
+      ]
+    },
+    "tab_baselines": {
+      "rows": [
+        {
+          "condition_id": "raw_iq_cnn",
+          "source_only": true,
+          "target_tuning": false
+        },
+        {
+          "condition_id": "patch_transformer",
+          "source_only": true,
+          "target_tuning": false
+        },
+        {
+          "condition_id": "magnitude_phase_cnn",
+          "source_only": true,
+          "target_tuning": false
+        },
+        {
+          "condition_id": "log_stft_cnn",
+          "source_only": true,
+          "target_tuning": false
+        },
+        {
+          "condition_id": "cwt_cnn",
+          "source_only": true,
+          "target_tuning": false
+        },
+        {
+          "condition_id": "wst_only",
+          "source_only": true,
+          "target_tuning": false
+        },
+        {
+          "condition_id": "cyclic_only",
+          "source_only": true,
+          "target_tuning": false
+        },
+        {
+          "condition_id": "stft_dct_xgboost",
+          "source_only": true,
+          "target_tuning": false
+        },
+        {
+          "condition_id": "fixed_wavelet_subbands",
+          "source_only": true,
+          "target_tuning": false
+        },
+        {
+          "condition_id": "log_psd_sobel",
+          "source_only": true,
+          "target_tuning": false
+        },
+        {
+          "condition_id": "early_fusion_resnet",
+          "source_only": true,
+          "target_tuning": false
+        },
+        {
+          "condition_id": "uniform_late_fusion",
+          "source_only": true,
+          "target_tuning": false
+        },
+        {
+          "condition_id": "ordinary_gate",
+          "source_only": true,
+          "target_tuning": false
+        },
+        {
+          "condition_id": "shuffled_pcrd",
+          "source_only": true,
+          "target_tuning": false
+        },
+        {
+          "condition_id": "pcrd",
+          "source_only": true,
+          "target_tuning": false
+        }
+      ],
+      "row_fields": [
+        "condition_id",
+        "source_only",
+        "target_tuning"
+      ]
+    },
+    "tab_external_sota": {
+      "rows": [
+        {
+          "condition_id": "open_rfnet",
+          "eligibility": null,
+          "ineligibility_reason": null,
+          "target_privilege": "source_only",
+          "native_input": null,
+          "observation_samples": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "worst_domain_macro_f1": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null
+        },
+        {
+          "condition_id": "asa",
+          "eligibility": null,
+          "ineligibility_reason": null,
+          "target_privilege": "source_only",
+          "native_input": null,
+          "observation_samples": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "worst_domain_macro_f1": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null
+        },
+        {
+          "condition_id": "avoiding_shortcuts",
+          "eligibility": null,
+          "ineligibility_reason": null,
+          "target_privilege": "source_only",
+          "native_input": null,
+          "observation_samples": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "worst_domain_macro_f1": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null
+        },
+        {
+          "condition_id": "riei",
+          "eligibility": null,
+          "ineligibility_reason": null,
+          "target_privilege": "source_only",
+          "native_input": null,
+          "observation_samples": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "worst_domain_macro_f1": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null
+        },
+        {
+          "condition_id": "mtl_sei",
+          "eligibility": null,
+          "ineligibility_reason": null,
+          "target_privilege": "source_only",
+          "native_input": null,
+          "observation_samples": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "worst_domain_macro_f1": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null
+        },
+        {
+          "condition_id": "mcaff",
+          "eligibility": null,
+          "ineligibility_reason": null,
+          "target_privilege": "source_only",
+          "native_input": null,
+          "observation_samples": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "worst_domain_macro_f1": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null
+        },
+        {
+          "condition_id": "s3r",
+          "eligibility": null,
+          "ineligibility_reason": null,
+          "target_privilege": "source_only",
+          "native_input": null,
+          "observation_samples": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "worst_domain_macro_f1": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null
+        },
+        {
+          "condition_id": "rff_llm",
+          "eligibility": null,
+          "ineligibility_reason": null,
+          "target_privilege": "source_only",
+          "native_input": null,
+          "observation_samples": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "worst_domain_macro_f1": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null
+        }
+      ],
+      "row_fields": [
+        "condition_id",
+        "eligibility",
+        "ineligibility_reason",
+        "target_privilege",
+        "native_input",
+        "observation_samples",
+        "recording_count",
+        "mean_macro_f1",
+        "ci95_low",
+        "ci95_high",
+        "worst_domain_macro_f1",
+        "parameters",
+        "macs",
+        "latency_ms"
+      ]
+    },
+    "tab_primary_results": {
+      "rows": [
+        {
+          "condition_id": "raw_iq_cnn",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "worst_domain_macro_f1": null,
+          "balanced_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "tensor_bytes": null,
+          "representation_latency_ms": null,
+          "model_latency_ms": null,
+          "peak_memory_bytes": null
+        },
+        {
+          "condition_id": "patch_transformer",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "worst_domain_macro_f1": null,
+          "balanced_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "tensor_bytes": null,
+          "representation_latency_ms": null,
+          "model_latency_ms": null,
+          "peak_memory_bytes": null
+        },
+        {
+          "condition_id": "magnitude_phase_cnn",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "worst_domain_macro_f1": null,
+          "balanced_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "tensor_bytes": null,
+          "representation_latency_ms": null,
+          "model_latency_ms": null,
+          "peak_memory_bytes": null
+        },
+        {
+          "condition_id": "log_stft_cnn",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "worst_domain_macro_f1": null,
+          "balanced_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "tensor_bytes": null,
+          "representation_latency_ms": null,
+          "model_latency_ms": null,
+          "peak_memory_bytes": null
+        },
+        {
+          "condition_id": "cwt_cnn",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "worst_domain_macro_f1": null,
+          "balanced_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "tensor_bytes": null,
+          "representation_latency_ms": null,
+          "model_latency_ms": null,
+          "peak_memory_bytes": null
+        },
+        {
+          "condition_id": "wst_only",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "worst_domain_macro_f1": null,
+          "balanced_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "tensor_bytes": null,
+          "representation_latency_ms": null,
+          "model_latency_ms": null,
+          "peak_memory_bytes": null
+        },
+        {
+          "condition_id": "cyclic_only",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "worst_domain_macro_f1": null,
+          "balanced_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "tensor_bytes": null,
+          "representation_latency_ms": null,
+          "model_latency_ms": null,
+          "peak_memory_bytes": null
+        },
+        {
+          "condition_id": "stft_dct_xgboost",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "worst_domain_macro_f1": null,
+          "balanced_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "tensor_bytes": null,
+          "representation_latency_ms": null,
+          "model_latency_ms": null,
+          "peak_memory_bytes": null
+        },
+        {
+          "condition_id": "fixed_wavelet_subbands",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "worst_domain_macro_f1": null,
+          "balanced_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "tensor_bytes": null,
+          "representation_latency_ms": null,
+          "model_latency_ms": null,
+          "peak_memory_bytes": null
+        },
+        {
+          "condition_id": "log_psd_sobel",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "worst_domain_macro_f1": null,
+          "balanced_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "tensor_bytes": null,
+          "representation_latency_ms": null,
+          "model_latency_ms": null,
+          "peak_memory_bytes": null
+        },
+        {
+          "condition_id": "early_fusion_resnet",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "worst_domain_macro_f1": null,
+          "balanced_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "tensor_bytes": null,
+          "representation_latency_ms": null,
+          "model_latency_ms": null,
+          "peak_memory_bytes": null
+        },
+        {
+          "condition_id": "uniform_late_fusion",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "worst_domain_macro_f1": null,
+          "balanced_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "tensor_bytes": null,
+          "representation_latency_ms": null,
+          "model_latency_ms": null,
+          "peak_memory_bytes": null
+        },
+        {
+          "condition_id": "ordinary_gate",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "worst_domain_macro_f1": null,
+          "balanced_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "tensor_bytes": null,
+          "representation_latency_ms": null,
+          "model_latency_ms": null,
+          "peak_memory_bytes": null
+        },
+        {
+          "condition_id": "shuffled_pcrd",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "worst_domain_macro_f1": null,
+          "balanced_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "tensor_bytes": null,
+          "representation_latency_ms": null,
+          "model_latency_ms": null,
+          "peak_memory_bytes": null
+        },
+        {
+          "condition_id": "pcrd",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "worst_domain_macro_f1": null,
+          "balanced_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "tensor_bytes": null,
+          "representation_latency_ms": null,
+          "model_latency_ms": null,
+          "peak_memory_bytes": null
+        }
+      ],
+      "row_fields": [
+        "condition_id",
+        "held_domain",
+        "recording_count",
+        "mean_macro_f1",
+        "ci95_low",
+        "ci95_high",
+        "worst_domain_macro_f1",
+        "balanced_accuracy",
+        "parameters",
+        "macs",
+        "latency_ms",
+        "tensor_bytes",
+        "representation_latency_ms",
+        "model_latency_ms",
+        "peak_memory_bytes"
+      ]
+    },
+    "tab_m1": {
+      "rows": [
+        {
+          "component": "delta_gate",
+          "estimate": null,
+          "interval_or_threshold": null,
+          "status": null
+        },
+        {
+          "component": "delta_shuffle",
+          "estimate": null,
+          "interval_or_threshold": null,
+          "status": null
+        },
+        {
+          "component": "worst_domain_difference",
+          "estimate": null,
+          "interval_or_threshold": null,
+          "status": null
+        },
+        {
+          "component": "compute_gate",
+          "estimate": null,
+          "interval_or_threshold": null,
+          "status": null
+        }
+      ],
+      "row_fields": [
+        "component",
+        "estimate",
+        "interval_or_threshold",
+        "status"
+      ]
+    },
+    "tab_ablations": {
+      "rows": [
+        {
+          "condition_id": "W",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "delta_vs_pcrd": null,
+          "delta_ci95_low": null,
+          "delta_ci95_high": null,
+          "cosine": null,
+          "nmae": null,
+          "domain_probe_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "C",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "delta_vs_pcrd": null,
+          "delta_ci95_low": null,
+          "delta_ci95_high": null,
+          "cosine": null,
+          "nmae": null,
+          "domain_probe_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "W+C",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "delta_vs_pcrd": null,
+          "delta_ci95_low": null,
+          "delta_ci95_high": null,
+          "cosine": null,
+          "nmae": null,
+          "domain_probe_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "W+C+E",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "delta_vs_pcrd": null,
+          "delta_ci95_low": null,
+          "delta_ci95_high": null,
+          "cosine": null,
+          "nmae": null,
+          "domain_probe_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "W+C+E+S",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "delta_vs_pcrd": null,
+          "delta_ci95_low": null,
+          "delta_ci95_high": null,
+          "cosine": null,
+          "nmae": null,
+          "domain_probe_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "active_minus_W",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "delta_vs_pcrd": null,
+          "delta_ci95_low": null,
+          "delta_ci95_high": null,
+          "cosine": null,
+          "nmae": null,
+          "domain_probe_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "active_minus_C",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "delta_vs_pcrd": null,
+          "delta_ci95_low": null,
+          "delta_ci95_high": null,
+          "cosine": null,
+          "nmae": null,
+          "domain_probe_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "active_minus_E",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "delta_vs_pcrd": null,
+          "delta_ci95_low": null,
+          "delta_ci95_high": null,
+          "cosine": null,
+          "nmae": null,
+          "domain_probe_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "active_minus_S",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "delta_vs_pcrd": null,
+          "delta_ci95_low": null,
+          "delta_ci95_high": null,
+          "cosine": null,
+          "nmae": null,
+          "domain_probe_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "wst_J3Q1",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "delta_vs_pcrd": null,
+          "delta_ci95_low": null,
+          "delta_ci95_high": null,
+          "cosine": null,
+          "nmae": null,
+          "domain_probe_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "wst_J3Q2",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "delta_vs_pcrd": null,
+          "delta_ci95_low": null,
+          "delta_ci95_high": null,
+          "cosine": null,
+          "nmae": null,
+          "domain_probe_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "wst_J3Q4",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "delta_vs_pcrd": null,
+          "delta_ci95_low": null,
+          "delta_ci95_high": null,
+          "cosine": null,
+          "nmae": null,
+          "domain_probe_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "wst_J4Q1",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "delta_vs_pcrd": null,
+          "delta_ci95_low": null,
+          "delta_ci95_high": null,
+          "cosine": null,
+          "nmae": null,
+          "domain_probe_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "wst_J4Q2",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "delta_vs_pcrd": null,
+          "delta_ci95_low": null,
+          "delta_ci95_high": null,
+          "cosine": null,
+          "nmae": null,
+          "domain_probe_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "wst_J4Q4",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "delta_vs_pcrd": null,
+          "delta_ci95_low": null,
+          "delta_ci95_high": null,
+          "cosine": null,
+          "nmae": null,
+          "domain_probe_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "wst_J5Q1",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "delta_vs_pcrd": null,
+          "delta_ci95_low": null,
+          "delta_ci95_high": null,
+          "cosine": null,
+          "nmae": null,
+          "domain_probe_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "wst_J5Q2",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "delta_vs_pcrd": null,
+          "delta_ci95_low": null,
+          "delta_ci95_high": null,
+          "cosine": null,
+          "nmae": null,
+          "domain_probe_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "wst_J5Q4",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "delta_vs_pcrd": null,
+          "delta_ci95_low": null,
+          "delta_ci95_high": null,
+          "cosine": null,
+          "nmae": null,
+          "domain_probe_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "cyclic_A4",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "delta_vs_pcrd": null,
+          "delta_ci95_low": null,
+          "delta_ci95_high": null,
+          "cosine": null,
+          "nmae": null,
+          "domain_probe_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "cyclic_A8",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "delta_vs_pcrd": null,
+          "delta_ci95_low": null,
+          "delta_ci95_high": null,
+          "cosine": null,
+          "nmae": null,
+          "domain_probe_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "cyclic_A16",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "delta_vs_pcrd": null,
+          "delta_ci95_low": null,
+          "delta_ci95_high": null,
+          "cosine": null,
+          "nmae": null,
+          "domain_probe_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "cyclic_permuted",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "delta_vs_pcrd": null,
+          "delta_ci95_low": null,
+          "delta_ci95_high": null,
+          "cosine": null,
+          "nmae": null,
+          "domain_probe_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "norm_percentile",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "delta_vs_pcrd": null,
+          "delta_ci95_low": null,
+          "delta_ci95_high": null,
+          "cosine": null,
+          "nmae": null,
+          "domain_probe_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "norm_zscore",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "delta_vs_pcrd": null,
+          "delta_ci95_low": null,
+          "delta_ci95_high": null,
+          "cosine": null,
+          "nmae": null,
+          "domain_probe_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "norm_none",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "delta_vs_pcrd": null,
+          "delta_ci95_low": null,
+          "delta_ci95_high": null,
+          "cosine": null,
+          "nmae": null,
+          "domain_probe_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "resolution_8",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "delta_vs_pcrd": null,
+          "delta_ci95_low": null,
+          "delta_ci95_high": null,
+          "cosine": null,
+          "nmae": null,
+          "domain_probe_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "resolution_16",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "delta_vs_pcrd": null,
+          "delta_ci95_low": null,
+          "delta_ci95_high": null,
+          "cosine": null,
+          "nmae": null,
+          "domain_probe_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "resolution_32",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "delta_vs_pcrd": null,
+          "delta_ci95_low": null,
+          "delta_ci95_high": null,
+          "cosine": null,
+          "nmae": null,
+          "domain_probe_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "selection_scalar",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "delta_vs_pcrd": null,
+          "delta_ci95_low": null,
+          "delta_ci95_high": null,
+          "cosine": null,
+          "nmae": null,
+          "domain_probe_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "selection_pareto",
+          "held_domain": null,
+          "recording_count": null,
+          "mean_macro_f1": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "delta_vs_pcrd": null,
+          "delta_ci95_low": null,
+          "delta_ci95_high": null,
+          "cosine": null,
+          "nmae": null,
+          "domain_probe_accuracy": null,
+          "parameters": null,
+          "macs": null,
+          "latency_ms": null,
+          "interpretation": null
+        }
+      ],
+      "row_fields": [
+        "condition_id",
+        "held_domain",
+        "recording_count",
+        "mean_macro_f1",
+        "ci95_low",
+        "ci95_high",
+        "delta_vs_pcrd",
+        "delta_ci95_low",
+        "delta_ci95_high",
+        "cosine",
+        "nmae",
+        "domain_probe_accuracy",
+        "parameters",
+        "macs",
+        "latency_ms",
+        "interpretation"
+      ]
+    },
+    "tab_robustness": {
+      "rows": [
+        {
+          "condition_id": "pcrd",
+          "snr_auc": null,
+          "sir_auc": null,
+          "worst_nuisance": null,
+          "worst_degradation": null,
+          "recording_count": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "wst_only",
+          "snr_auc": null,
+          "sir_auc": null,
+          "worst_nuisance": null,
+          "worst_degradation": null,
+          "recording_count": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "cyclic_only",
+          "snr_auc": null,
+          "sir_auc": null,
+          "worst_nuisance": null,
+          "worst_degradation": null,
+          "recording_count": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "log_stft_cnn",
+          "snr_auc": null,
+          "sir_auc": null,
+          "worst_nuisance": null,
+          "worst_degradation": null,
+          "recording_count": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "interpretation": null
+        }
+      ],
+      "row_fields": [
+        "condition_id",
+        "snr_auc",
+        "sir_auc",
+        "worst_nuisance",
+        "worst_degradation",
+        "recording_count",
+        "ci95_low",
+        "ci95_high",
+        "interpretation"
+      ]
+    },
+    "tab_detection": {
+      "rows": [
+        {
+          "condition_id": "raw_iq_cnn",
+          "auroc": null,
+          "auprc": null,
+          "far": null,
+          "miss_rate": null,
+          "ci95": null,
+          "recording_count": null,
+          "threshold": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "patch_transformer",
+          "auroc": null,
+          "auprc": null,
+          "far": null,
+          "miss_rate": null,
+          "ci95": null,
+          "recording_count": null,
+          "threshold": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "magnitude_phase_cnn",
+          "auroc": null,
+          "auprc": null,
+          "far": null,
+          "miss_rate": null,
+          "ci95": null,
+          "recording_count": null,
+          "threshold": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "log_stft_cnn",
+          "auroc": null,
+          "auprc": null,
+          "far": null,
+          "miss_rate": null,
+          "ci95": null,
+          "recording_count": null,
+          "threshold": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "cwt_cnn",
+          "auroc": null,
+          "auprc": null,
+          "far": null,
+          "miss_rate": null,
+          "ci95": null,
+          "recording_count": null,
+          "threshold": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "wst_only",
+          "auroc": null,
+          "auprc": null,
+          "far": null,
+          "miss_rate": null,
+          "ci95": null,
+          "recording_count": null,
+          "threshold": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "cyclic_only",
+          "auroc": null,
+          "auprc": null,
+          "far": null,
+          "miss_rate": null,
+          "ci95": null,
+          "recording_count": null,
+          "threshold": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "stft_dct_xgboost",
+          "auroc": null,
+          "auprc": null,
+          "far": null,
+          "miss_rate": null,
+          "ci95": null,
+          "recording_count": null,
+          "threshold": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "fixed_wavelet_subbands",
+          "auroc": null,
+          "auprc": null,
+          "far": null,
+          "miss_rate": null,
+          "ci95": null,
+          "recording_count": null,
+          "threshold": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "log_psd_sobel",
+          "auroc": null,
+          "auprc": null,
+          "far": null,
+          "miss_rate": null,
+          "ci95": null,
+          "recording_count": null,
+          "threshold": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "early_fusion_resnet",
+          "auroc": null,
+          "auprc": null,
+          "far": null,
+          "miss_rate": null,
+          "ci95": null,
+          "recording_count": null,
+          "threshold": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "uniform_late_fusion",
+          "auroc": null,
+          "auprc": null,
+          "far": null,
+          "miss_rate": null,
+          "ci95": null,
+          "recording_count": null,
+          "threshold": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "ordinary_gate",
+          "auroc": null,
+          "auprc": null,
+          "far": null,
+          "miss_rate": null,
+          "ci95": null,
+          "recording_count": null,
+          "threshold": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "shuffled_pcrd",
+          "auroc": null,
+          "auprc": null,
+          "far": null,
+          "miss_rate": null,
+          "ci95": null,
+          "recording_count": null,
+          "threshold": null,
+          "interpretation": null
+        },
+        {
+          "condition_id": "pcrd",
+          "auroc": null,
+          "auprc": null,
+          "far": null,
+          "miss_rate": null,
+          "ci95": null,
+          "recording_count": null,
+          "threshold": null,
+          "interpretation": null
+        }
+      ],
+      "row_fields": [
+        "condition_id",
+        "auroc",
+        "auprc",
+        "far",
+        "miss_rate",
+        "ci95",
+        "recording_count",
+        "threshold",
+        "interpretation"
+      ]
+    },
+    "tab_per_class": {
+      "rows": [
+        {
+          "class_domain": "<class>@<held_domain>",
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "recording_support": null,
+          "ci95_low": null,
+          "ci95_high": null
+        }
+      ],
+      "row_fields": [
+        "class_domain",
+        "precision",
+        "recall",
+        "f1",
+        "recording_support",
+        "ci95_low",
+        "ci95_high"
+      ]
+    },
+    "tab_routing_calibration": {
+      "rows": [
+        {
+          "diagnostic": "gate_entropy",
+          "estimate": null,
+          "interval_or_threshold": null,
+          "recording_support": null,
+          "interpretation": null
+        },
+        {
+          "diagnostic": "relation_coverage",
+          "estimate": null,
+          "interval_or_threshold": null,
+          "recording_support": null,
+          "interpretation": null
+        },
+        {
+          "diagnostic": "ece",
+          "estimate": null,
+          "interval_or_threshold": null,
+          "recording_support": null,
+          "interpretation": null
+        },
+        {
+          "diagnostic": "brier",
+          "estimate": null,
+          "interval_or_threshold": null,
+          "recording_support": null,
+          "interpretation": null
+        },
+        {
+          "diagnostic": "nll",
+          "estimate": null,
+          "interval_or_threshold": null,
+          "recording_support": null,
+          "interpretation": null
+        }
+      ],
+      "row_fields": [
+        "diagnostic",
+        "estimate",
+        "interval_or_threshold",
+        "recording_support",
+        "interpretation"
+      ]
+    },
+    "tab_hypotheses": {
+      "rows": [
+        {
+          "id": "H1",
+          "estimand": null,
+          "raw_p": null,
+          "holm_p": null,
+          "status": "open",
+          "decision_reason": null
+        },
+        {
+          "id": "H2",
+          "estimand": null,
+          "raw_p": null,
+          "holm_p": null,
+          "status": "open",
+          "decision_reason": null
+        },
+        {
+          "id": "H3",
+          "estimand": null,
+          "raw_p": null,
+          "holm_p": null,
+          "status": "open",
+          "decision_reason": null
+        },
+        {
+          "id": "H4",
+          "estimand": null,
+          "raw_p": null,
+          "holm_p": null,
+          "status": "open",
+          "decision_reason": null
+        }
+      ],
+      "row_fields": [
+        "id",
+        "estimand",
+        "raw_p",
+        "holm_p",
+        "status",
+        "decision_reason"
+      ]
+    },
+    "tab_integrity": {
+      "rows": [
+        {
+          "audit": "duplicates",
+          "status": null,
+          "critical": null,
+          "evidence_path_hash": null
+        },
+        {
+          "audit": "near_duplicates",
+          "status": null,
+          "critical": null,
+          "evidence_path_hash": null
+        },
+        {
+          "audit": "temporal",
+          "status": null,
+          "critical": null,
+          "evidence_path_hash": null
+        },
+        {
+          "audit": "source_record_overlap",
+          "status": null,
+          "critical": null,
+          "evidence_path_hash": null
+        },
+        {
+          "audit": "target_firewall",
+          "status": null,
+          "critical": null,
+          "evidence_path_hash": null
+        },
+        {
+          "audit": "label_shuffle",
+          "status": null,
+          "critical": null,
+          "evidence_path_hash": null
+        },
+        {
+          "audit": "background_only",
+          "status": null,
+          "critical": null,
+          "evidence_path_hash": null
+        }
+      ],
+      "row_fields": [
+        "audit",
+        "status",
+        "critical",
+        "evidence_path_hash"
+      ]
+    }
+  },
+  "mechanism": {
+    "relation_coverage": {
+      "aggregate": null,
+      "by_nuisance": null,
+      "recording_count": null
+    },
+    "m1": {
+      "delta_gate": {
+        "estimate": null,
+        "ci95": null
+      },
+      "delta_shuffle": {
+        "estimate": null,
+        "ci95": null
+      },
+      "worst_domain_difference": {
+        "estimate": null,
+        "ci95": null
+      },
+      "compute_gate": null,
+      "status": null,
+      "reason": null,
+      "state_machine_inputs": null
+    }
+  },
+  "figures": {
+    "fig_main_recognition": {
+      "series": [
+        {
+          "series_id": "raw_iq_cnn",
+          "panel_id": "average_and_worst_domain",
+          "x_name": null,
+          "x_unit": null,
+          "x": [],
+          "y_name": null,
+          "y_unit": null,
+          "y": [],
+          "ci95_low": [],
+          "ci95_high": [],
+          "recording_support": [],
+          "held_domain": null
+        },
+        {
+          "series_id": "patch_transformer",
+          "panel_id": "average_and_worst_domain",
+          "x_name": null,
+          "x_unit": null,
+          "x": [],
+          "y_name": null,
+          "y_unit": null,
+          "y": [],
+          "ci95_low": [],
+          "ci95_high": [],
+          "recording_support": [],
+          "held_domain": null
+        },
+        {
+          "series_id": "magnitude_phase_cnn",
+          "panel_id": "average_and_worst_domain",
+          "x_name": null,
+          "x_unit": null,
+          "x": [],
+          "y_name": null,
+          "y_unit": null,
+          "y": [],
+          "ci95_low": [],
+          "ci95_high": [],
+          "recording_support": [],
+          "held_domain": null
+        },
+        {
+          "series_id": "log_stft_cnn",
+          "panel_id": "average_and_worst_domain",
+          "x_name": null,
+          "x_unit": null,
+          "x": [],
+          "y_name": null,
+          "y_unit": null,
+          "y": [],
+          "ci95_low": [],
+          "ci95_high": [],
+          "recording_support": [],
+          "held_domain": null
+        },
+        {
+          "series_id": "cwt_cnn",
+          "panel_id": "average_and_worst_domain",
+          "x_name": null,
+          "x_unit": null,
+          "x": [],
+          "y_name": null,
+          "y_unit": null,
+          "y": [],
+          "ci95_low": [],
+          "ci95_high": [],
+          "recording_support": [],
+          "held_domain": null
+        },
+        {
+          "series_id": "wst_only",
+          "panel_id": "average_and_worst_domain",
+          "x_name": null,
+          "x_unit": null,
+          "x": [],
+          "y_name": null,
+          "y_unit": null,
+          "y": [],
+          "ci95_low": [],
+          "ci95_high": [],
+          "recording_support": [],
+          "held_domain": null
+        },
+        {
+          "series_id": "cyclic_only",
+          "panel_id": "average_and_worst_domain",
+          "x_name": null,
+          "x_unit": null,
+          "x": [],
+          "y_name": null,
+          "y_unit": null,
+          "y": [],
+          "ci95_low": [],
+          "ci95_high": [],
+          "recording_support": [],
+          "held_domain": null
+        },
+        {
+          "series_id": "stft_dct_xgboost",
+          "panel_id": "average_and_worst_domain",
+          "x_name": null,
+          "x_unit": null,
+          "x": [],
+          "y_name": null,
+          "y_unit": null,
+          "y": [],
+          "ci95_low": [],
+          "ci95_high": [],
+          "recording_support": [],
+          "held_domain": null
+        },
+        {
+          "series_id": "fixed_wavelet_subbands",
+          "panel_id": "average_and_worst_domain",
+          "x_name": null,
+          "x_unit": null,
+          "x": [],
+          "y_name": null,
+          "y_unit": null,
+          "y": [],
+          "ci95_low": [],
+          "ci95_high": [],
+          "recording_support": [],
+          "held_domain": null
+        },
+        {
+          "series_id": "log_psd_sobel",
+          "panel_id": "average_and_worst_domain",
+          "x_name": null,
+          "x_unit": null,
+          "x": [],
+          "y_name": null,
+          "y_unit": null,
+          "y": [],
+          "ci95_low": [],
+          "ci95_high": [],
+          "recording_support": [],
+          "held_domain": null
+        },
+        {
+          "series_id": "early_fusion_resnet",
+          "panel_id": "average_and_worst_domain",
+          "x_name": null,
+          "x_unit": null,
+          "x": [],
+          "y_name": null,
+          "y_unit": null,
+          "y": [],
+          "ci95_low": [],
+          "ci95_high": [],
+          "recording_support": [],
+          "held_domain": null
+        },
+        {
+          "series_id": "uniform_late_fusion",
+          "panel_id": "average_and_worst_domain",
+          "x_name": null,
+          "x_unit": null,
+          "x": [],
+          "y_name": null,
+          "y_unit": null,
+          "y": [],
+          "ci95_low": [],
+          "ci95_high": [],
+          "recording_support": [],
+          "held_domain": null
+        },
+        {
+          "series_id": "ordinary_gate",
+          "panel_id": "average_and_worst_domain",
+          "x_name": null,
+          "x_unit": null,
+          "x": [],
+          "y_name": null,
+          "y_unit": null,
+          "y": [],
+          "ci95_low": [],
+          "ci95_high": [],
+          "recording_support": [],
+          "held_domain": null
+        },
+        {
+          "series_id": "shuffled_pcrd",
+          "panel_id": "average_and_worst_domain",
+          "x_name": null,
+          "x_unit": null,
+          "x": [],
+          "y_name": null,
+          "y_unit": null,
+          "y": [],
+          "ci95_low": [],
+          "ci95_high": [],
+          "recording_support": [],
+          "held_domain": null
+        },
+        {
+          "series_id": "pcrd",
+          "panel_id": "average_and_worst_domain",
+          "x_name": null,
+          "x_unit": null,
+          "x": [],
+          "y_name": null,
+          "y_unit": null,
+          "y": [],
+          "ci95_low": [],
+          "ci95_high": [],
+          "recording_support": [],
+          "held_domain": null
+        }
+      ]
+    },
+    "fig_m1_effects": {
+      "series": [
+        {
+          "series_id": "delta_gate",
+          "panel_id": "paired_effects",
+          "x_name": null,
+          "x_unit": null,
+          "x": [],
+          "y_name": null,
+          "y_unit": null,
+          "y": [],
+          "ci95_low": [],
+          "ci95_high": [],
+          "recording_support": [],
+          "held_domain": null
+        },
+        {
+          "series_id": "delta_shuffle",
+          "panel_id": "paired_effects",
+          "x_name": null,
+          "x_unit": null,
+          "x": [],
+          "y_name": null,
+          "y_unit": null,
+          "y": [],
+          "ci95_low": [],
+          "ci95_high": [],
+          "recording_support": [],
+          "held_domain": null
+        },
+        {
+          "series_id": "worst_domain_difference",
+          "panel_id": "paired_effects",
+          "x_name": null,
+          "x_unit": null,
+          "x": [],
+          "y_name": null,
+          "y_unit": null,
+          "y": [],
+          "ci95_low": [],
+          "ci95_high": [],
+          "recording_support": [],
+          "held_domain": null
+        }
+      ]
+    },
+    "fig_domain_heatmap": {
+      "matrix": null,
+      "x_labels": [
+        "DroneRFa",
+        "DroneRFb-DIR",
+        "DRFF-R2"
+      ],
+      "y_labels": [
+        "raw_iq_cnn",
+        "patch_transformer",
+        "magnitude_phase_cnn",
+        "log_stft_cnn",
+        "cwt_cnn",
+        "wst_only",
+        "cyclic_only",
+        "stft_dct_xgboost",
+        "fixed_wavelet_subbands",
+        "log_psd_sobel",
+        "early_fusion_resnet",
+        "uniform_late_fusion",
+        "ordinary_gate",
+        "shuffled_pcrd",
+        "pcrd"
+      ]
+    },
+    "fig_robustness": {
+      "series": [
+        {
+          "series_id": "pcrd_snr",
+          "panel_id": "snr",
+          "x_name": null,
+          "x_unit": null,
+          "x": [],
+          "y_name": null,
+          "y_unit": null,
+          "y": [],
+          "ci95_low": [],
+          "ci95_high": [],
+          "recording_support": [],
+          "held_domain": null
+        },
+        {
+          "series_id": "wst_only_snr",
+          "panel_id": "snr",
+          "x_name": null,
+          "x_unit": null,
+          "x": [],
+          "y_name": null,
+          "y_unit": null,
+          "y": [],
+          "ci95_low": [],
+          "ci95_high": [],
+          "recording_support": [],
+          "held_domain": null
+        },
+        {
+          "series_id": "cyclic_only_snr",
+          "panel_id": "snr",
+          "x_name": null,
+          "x_unit": null,
+          "x": [],
+          "y_name": null,
+          "y_unit": null,
+          "y": [],
+          "ci95_low": [],
+          "ci95_high": [],
+          "recording_support": [],
+          "held_domain": null
+        },
+        {
+          "series_id": "log_stft_cnn_snr",
+          "panel_id": "snr",
+          "x_name": null,
+          "x_unit": null,
+          "x": [],
+          "y_name": null,
+          "y_unit": null,
+          "y": [],
+          "ci95_low": [],
+          "ci95_high": [],
+          "recording_support": [],
+          "held_domain": null
+        },
+        {
+          "series_id": "pcrd_sir",
+          "panel_id": "sir",
+          "x_name": null,
+          "x_unit": null,
+          "x": [],
+          "y_name": null,
+          "y_unit": null,
+          "y": [],
+          "ci95_low": [],
+          "ci95_high": [],
+          "recording_support": [],
+          "held_domain": null
+        },
+        {
+          "series_id": "wst_only_sir",
+          "panel_id": "sir",
+          "x_name": null,
+          "x_unit": null,
+          "x": [],
+          "y_name": null,
+          "y_unit": null,
+          "y": [],
+          "ci95_low": [],
+          "ci95_high": [],
+          "recording_support": [],
+          "held_domain": null
+        },
+        {
+          "series_id": "cyclic_only_sir",
+          "panel_id": "sir",
+          "x_name": null,
+          "x_unit": null,
+          "x": [],
+          "y_name": null,
+          "y_unit": null,
+          "y": [],
+          "ci95_low": [],
+          "ci95_high": [],
+          "recording_support": [],
+          "held_domain": null
+        },
+        {
+          "series_id": "log_stft_cnn_sir",
+          "panel_id": "sir",
+          "x_name": null,
+          "x_unit": null,
+          "x": [],
+          "y_name": null,
+          "y_unit": null,
+          "y": [],
+          "ci95_low": [],
+          "ci95_high": [],
+          "recording_support": [],
+          "held_domain": null
+        }
+      ]
+    },
+    "fig_routing_diagnostics": {
+      "panels": [
+        {
+          "panel_id": null,
+          "nuisance": null,
+          "severity": null,
+          "family": null,
+          "weights": null,
+          "recording_ids": null,
+          "entropy": null,
+          "relation_coverage": null
+        }
+      ]
+    },
+    "fig_scars_selection_h2": {
+      "panels": [
+        {
+          "panel_id": null,
+          "configuration_id": null,
+          "source_instability": null,
+          "source_macro_f1": null,
+          "cost": null,
+          "feasible": null,
+          "pareto": null,
+          "selected": null,
+          "h2_residual_instability": null,
+          "h2_residual_degradation": null,
+          "held_domain": null
+        }
+      ]
+    },
+    "fig_confusion_matrices": {
+      "panels": [
+        {
+          "panel_id": null,
+          "condition_id": "raw_iq_cnn",
+          "held_domain": null,
+          "class_labels": null,
+          "matrix": null,
+          "recording_support": null
+        },
+        {
+          "panel_id": null,
+          "condition_id": "patch_transformer",
+          "held_domain": null,
+          "class_labels": null,
+          "matrix": null,
+          "recording_support": null
+        },
+        {
+          "panel_id": null,
+          "condition_id": "magnitude_phase_cnn",
+          "held_domain": null,
+          "class_labels": null,
+          "matrix": null,
+          "recording_support": null
+        },
+        {
+          "panel_id": null,
+          "condition_id": "log_stft_cnn",
+          "held_domain": null,
+          "class_labels": null,
+          "matrix": null,
+          "recording_support": null
+        },
+        {
+          "panel_id": null,
+          "condition_id": "cwt_cnn",
+          "held_domain": null,
+          "class_labels": null,
+          "matrix": null,
+          "recording_support": null
+        },
+        {
+          "panel_id": null,
+          "condition_id": "wst_only",
+          "held_domain": null,
+          "class_labels": null,
+          "matrix": null,
+          "recording_support": null
+        },
+        {
+          "panel_id": null,
+          "condition_id": "cyclic_only",
+          "held_domain": null,
+          "class_labels": null,
+          "matrix": null,
+          "recording_support": null
+        },
+        {
+          "panel_id": null,
+          "condition_id": "stft_dct_xgboost",
+          "held_domain": null,
+          "class_labels": null,
+          "matrix": null,
+          "recording_support": null
+        },
+        {
+          "panel_id": null,
+          "condition_id": "fixed_wavelet_subbands",
+          "held_domain": null,
+          "class_labels": null,
+          "matrix": null,
+          "recording_support": null
+        },
+        {
+          "panel_id": null,
+          "condition_id": "log_psd_sobel",
+          "held_domain": null,
+          "class_labels": null,
+          "matrix": null,
+          "recording_support": null
+        },
+        {
+          "panel_id": null,
+          "condition_id": "early_fusion_resnet",
+          "held_domain": null,
+          "class_labels": null,
+          "matrix": null,
+          "recording_support": null
+        },
+        {
+          "panel_id": null,
+          "condition_id": "uniform_late_fusion",
+          "held_domain": null,
+          "class_labels": null,
+          "matrix": null,
+          "recording_support": null
+        },
+        {
+          "panel_id": null,
+          "condition_id": "ordinary_gate",
+          "held_domain": null,
+          "class_labels": null,
+          "matrix": null,
+          "recording_support": null
+        },
+        {
+          "panel_id": null,
+          "condition_id": "shuffled_pcrd",
+          "held_domain": null,
+          "class_labels": null,
+          "matrix": null,
+          "recording_support": null
+        },
+        {
+          "panel_id": null,
+          "condition_id": "pcrd",
+          "held_domain": null,
+          "class_labels": null,
+          "matrix": null,
+          "recording_support": null
+        }
+      ]
+    },
+    "fig_calibration": {
+      "panels": [
+        {
+          "panel_id": null,
+          "condition_id": "raw_iq_cnn",
+          "held_domain": null,
+          "confidence": null,
+          "empirical_accuracy": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "bin_support": null,
+          "ece": null,
+          "brier": null,
+          "nll": null
+        },
+        {
+          "panel_id": null,
+          "condition_id": "patch_transformer",
+          "held_domain": null,
+          "confidence": null,
+          "empirical_accuracy": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "bin_support": null,
+          "ece": null,
+          "brier": null,
+          "nll": null
+        },
+        {
+          "panel_id": null,
+          "condition_id": "magnitude_phase_cnn",
+          "held_domain": null,
+          "confidence": null,
+          "empirical_accuracy": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "bin_support": null,
+          "ece": null,
+          "brier": null,
+          "nll": null
+        },
+        {
+          "panel_id": null,
+          "condition_id": "log_stft_cnn",
+          "held_domain": null,
+          "confidence": null,
+          "empirical_accuracy": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "bin_support": null,
+          "ece": null,
+          "brier": null,
+          "nll": null
+        },
+        {
+          "panel_id": null,
+          "condition_id": "cwt_cnn",
+          "held_domain": null,
+          "confidence": null,
+          "empirical_accuracy": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "bin_support": null,
+          "ece": null,
+          "brier": null,
+          "nll": null
+        },
+        {
+          "panel_id": null,
+          "condition_id": "wst_only",
+          "held_domain": null,
+          "confidence": null,
+          "empirical_accuracy": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "bin_support": null,
+          "ece": null,
+          "brier": null,
+          "nll": null
+        },
+        {
+          "panel_id": null,
+          "condition_id": "cyclic_only",
+          "held_domain": null,
+          "confidence": null,
+          "empirical_accuracy": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "bin_support": null,
+          "ece": null,
+          "brier": null,
+          "nll": null
+        },
+        {
+          "panel_id": null,
+          "condition_id": "stft_dct_xgboost",
+          "held_domain": null,
+          "confidence": null,
+          "empirical_accuracy": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "bin_support": null,
+          "ece": null,
+          "brier": null,
+          "nll": null
+        },
+        {
+          "panel_id": null,
+          "condition_id": "fixed_wavelet_subbands",
+          "held_domain": null,
+          "confidence": null,
+          "empirical_accuracy": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "bin_support": null,
+          "ece": null,
+          "brier": null,
+          "nll": null
+        },
+        {
+          "panel_id": null,
+          "condition_id": "log_psd_sobel",
+          "held_domain": null,
+          "confidence": null,
+          "empirical_accuracy": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "bin_support": null,
+          "ece": null,
+          "brier": null,
+          "nll": null
+        },
+        {
+          "panel_id": null,
+          "condition_id": "early_fusion_resnet",
+          "held_domain": null,
+          "confidence": null,
+          "empirical_accuracy": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "bin_support": null,
+          "ece": null,
+          "brier": null,
+          "nll": null
+        },
+        {
+          "panel_id": null,
+          "condition_id": "uniform_late_fusion",
+          "held_domain": null,
+          "confidence": null,
+          "empirical_accuracy": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "bin_support": null,
+          "ece": null,
+          "brier": null,
+          "nll": null
+        },
+        {
+          "panel_id": null,
+          "condition_id": "ordinary_gate",
+          "held_domain": null,
+          "confidence": null,
+          "empirical_accuracy": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "bin_support": null,
+          "ece": null,
+          "brier": null,
+          "nll": null
+        },
+        {
+          "panel_id": null,
+          "condition_id": "shuffled_pcrd",
+          "held_domain": null,
+          "confidence": null,
+          "empirical_accuracy": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "bin_support": null,
+          "ece": null,
+          "brier": null,
+          "nll": null
+        },
+        {
+          "panel_id": null,
+          "condition_id": "pcrd",
+          "held_domain": null,
+          "confidence": null,
+          "empirical_accuracy": null,
+          "ci95_low": null,
+          "ci95_high": null,
+          "bin_support": null,
+          "ece": null,
+          "brier": null,
+          "nll": null
+        }
+      ]
+    },
+    "fig_compute_tradeoff": {
+      "series": [
+        {
+          "series_id": "raw_iq_cnn",
+          "panel_id": "accuracy_compute_tradeoff",
+          "x_name": null,
+          "x_unit": null,
+          "x": [],
+          "y_name": null,
+          "y_unit": null,
+          "y": [],
+          "ci95_low": [],
+          "ci95_high": [],
+          "recording_support": [],
+          "held_domain": null
+        },
+        {
+          "series_id": "patch_transformer",
+          "panel_id": "accuracy_compute_tradeoff",
+          "x_name": null,
+          "x_unit": null,
+          "x": [],
+          "y_name": null,
+          "y_unit": null,
+          "y": [],
+          "ci95_low": [],
+          "ci95_high": [],
+          "recording_support": [],
+          "held_domain": null
+        },
+        {
+          "series_id": "magnitude_phase_cnn",
+          "panel_id": "accuracy_compute_tradeoff",
+          "x_name": null,
+          "x_unit": null,
+          "x": [],
+          "y_name": null,
+          "y_unit": null,
+          "y": [],
+          "ci95_low": [],
+          "ci95_high": [],
+          "recording_support": [],
+          "held_domain": null
+        },
+        {
+          "series_id": "log_stft_cnn",
+          "panel_id": "accuracy_compute_tradeoff",
+          "x_name": null,
+          "x_unit": null,
+          "x": [],
+          "y_name": null,
+          "y_unit": null,
+          "y": [],
+          "ci95_low": [],
+          "ci95_high": [],
+          "recording_support": [],
+          "held_domain": null
+        },
+        {
+          "series_id": "cwt_cnn",
+          "panel_id": "accuracy_compute_tradeoff",
+          "x_name": null,
+          "x_unit": null,
+          "x": [],
+          "y_name": null,
+          "y_unit": null,
+          "y": [],
+          "ci95_low": [],
+          "ci95_high": [],
+          "recording_support": [],
+          "held_domain": null
+        },
+        {
+          "series_id": "wst_only",
+          "panel_id": "accuracy_compute_tradeoff",
+          "x_name": null,
+          "x_unit": null,
+          "x": [],
+          "y_name": null,
+          "y_unit": null,
+          "y": [],
+          "ci95_low": [],
+          "ci95_high": [],
+          "recording_support": [],
+          "held_domain": null
+        },
+        {
+          "series_id": "cyclic_only",
+          "panel_id": "accuracy_compute_tradeoff",
+          "x_name": null,
+          "x_unit": null,
+          "x": [],
+          "y_name": null,
+          "y_unit": null,
+          "y": [],
+          "ci95_low": [],
+          "ci95_high": [],
+          "recording_support": [],
+          "held_domain": null
+        },
+        {
+          "series_id": "stft_dct_xgboost",
+          "panel_id": "accuracy_compute_tradeoff",
+          "x_name": null,
+          "x_unit": null,
+          "x": [],
+          "y_name": null,
+          "y_unit": null,
+          "y": [],
+          "ci95_low": [],
+          "ci95_high": [],
+          "recording_support": [],
+          "held_domain": null
+        },
+        {
+          "series_id": "fixed_wavelet_subbands",
+          "panel_id": "accuracy_compute_tradeoff",
+          "x_name": null,
+          "x_unit": null,
+          "x": [],
+          "y_name": null,
+          "y_unit": null,
+          "y": [],
+          "ci95_low": [],
+          "ci95_high": [],
+          "recording_support": [],
+          "held_domain": null
+        },
+        {
+          "series_id": "log_psd_sobel",
+          "panel_id": "accuracy_compute_tradeoff",
+          "x_name": null,
+          "x_unit": null,
+          "x": [],
+          "y_name": null,
+          "y_unit": null,
+          "y": [],
+          "ci95_low": [],
+          "ci95_high": [],
+          "recording_support": [],
+          "held_domain": null
+        },
+        {
+          "series_id": "early_fusion_resnet",
+          "panel_id": "accuracy_compute_tradeoff",
+          "x_name": null,
+          "x_unit": null,
+          "x": [],
+          "y_name": null,
+          "y_unit": null,
+          "y": [],
+          "ci95_low": [],
+          "ci95_high": [],
+          "recording_support": [],
+          "held_domain": null
+        },
+        {
+          "series_id": "uniform_late_fusion",
+          "panel_id": "accuracy_compute_tradeoff",
+          "x_name": null,
+          "x_unit": null,
+          "x": [],
+          "y_name": null,
+          "y_unit": null,
+          "y": [],
+          "ci95_low": [],
+          "ci95_high": [],
+          "recording_support": [],
+          "held_domain": null
+        },
+        {
+          "series_id": "ordinary_gate",
+          "panel_id": "accuracy_compute_tradeoff",
+          "x_name": null,
+          "x_unit": null,
+          "x": [],
+          "y_name": null,
+          "y_unit": null,
+          "y": [],
+          "ci95_low": [],
+          "ci95_high": [],
+          "recording_support": [],
+          "held_domain": null
+        },
+        {
+          "series_id": "shuffled_pcrd",
+          "panel_id": "accuracy_compute_tradeoff",
+          "x_name": null,
+          "x_unit": null,
+          "x": [],
+          "y_name": null,
+          "y_unit": null,
+          "y": [],
+          "ci95_low": [],
+          "ci95_high": [],
+          "recording_support": [],
+          "held_domain": null
+        },
+        {
+          "series_id": "pcrd",
+          "panel_id": "accuracy_compute_tradeoff",
+          "x_name": null,
+          "x_unit": null,
+          "x": [],
+          "y_name": null,
+          "y_unit": null,
+          "y": [],
+          "ci95_low": [],
+          "ci95_high": [],
+          "recording_support": [],
+          "held_domain": null
+        }
+      ]
+    }
+  },
+  "demo_notice": {
+    "purpose": "Complete field map for manuscript tables, figures, claims, and provenance.",
+    "empirical_values": "All empirical values are null; this file is not evidence.",
+    "replacement": "Use the validated real-confirmatory results.json emitted by finalize_results."
+  },
+  "synthetic_dev": true,
+  "primary_metric": {
+    "name": "recording_level_macro_f1",
+    "value": null,
+    "direction": "maximize",
+    "best_condition": "pcrd",
+    "semantic_path": "tables.tab_primary_results.rows[condition_id=pcrd].mean_macro_f1"
+  },
+  "summary": null
+}

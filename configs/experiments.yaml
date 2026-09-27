@@ -1,0 +1,97 @@
+schema_version: 1.0.0
+campaign_status: code_ready_blocked_pending_eligible_data_preflight_and_explicit_target_authorization
+primary_task: closed_set_uav_model_or_family_recognition
+secondary_task: binary_uav_vs_background_detection
+source_selection:
+  hard_budget_file: configs/deployment_budget.yaml
+  h2_bank_file: configs/h2_bank.yaml
+  no_scalarization: true
+  fit_roles: [source_fit, source_calibration, source_selection, source_validation]
+  target_access: forbidden
+held_evaluation:
+  once_per_fold: true
+  report_macro_f1: true
+  report_average_and_worst_domain: true
+ablations:
+  channel_masks: [W, C, W+C, W+C+E, W+C+E+S]
+  wst_J: [3, 4, 5]
+  wst_Q: [1, 2, 4]
+  wst_factorial: true
+  cyclic_permutation_control: true
+  energy_domain_probe: true
+  normalization: [source_global_percentile_clip, source_zscore, none]
+  resolutions: [8, 16, 32]
+  scalarization_comparator: equal_weight_only
+detection:
+  enabled_when_background_valid: true
+  metrics: [auroc, auprc, far, miss_rate, confusion_matrix, per_class_recall]
+  threshold_fit: source_validation_only
+robustness:
+  snr_db: [20, 10, 0, -10]
+  sir_db: [20, 10, 0, -10]
+  metrics: [macro_f1, normalized_curve_auc]
+negative_controls:
+  - label_shuffle
+  - background_only
+  - cyclic_index_permutation
+  - domain_probe
+  - duplicate_and_temporal_leakage
+execution:
+  final_real_run_authorized: false
+  stages:
+    - preflight_mat
+    - freeze_source
+    - train_source_models
+    - evaluate_target_explicit_authorization
+    - finalize_results
+  source_models_before_target: all_folds_required
+  target_cache: per_recording_atomic_restart_safe
+  folds_and_models: sequential
+  permitted_now: [unit_tests, adapter_tests, synthetic_contract_smoke, source_only_after_preflight]
+training_sampling:
+  policy_version: sampling-contract-20260829
+  window_selection: evenly_spaced_candidate_pool_per_physical_recording
+  max_windows_per_recording: 64
+  short_recording_policy: use_all_valid_windows_when_fewer_than_64
+  inferential_unit: physical_recording_or_event
+  conditions:
+    pcrd_student:
+      sampling_policy: deterministic_earliest_valid_source_fit_window
+      max_windows_per_recording_reaching_model: 1
+      recording_balance_rule: exactly_one_clean_window_per_physical_recording
+      nuisance_expansion: every_registered_nuisance_severity_case
+      epoch_resampling_rule: none_fixed_relation_tensor
+    relation_cache:
+      sampling_policy: deterministic_earliest_valid_source_fit_window
+      max_windows_per_recording_reaching_cache: 1
+      recording_balance_rule: exactly_one_clean_window_per_physical_recording
+      nuisance_expansion: every_registered_nuisance_severity_case
+      epoch_resampling_rule: not_applicable_cache_frozen_once
+    calibration_scale_cache:
+      sampling_policy: deterministic_earliest_valid_source_calibration_window
+      max_windows_per_recording_reaching_cache: 1
+      recording_balance_rule: exactly_one_clean_window_per_physical_recording
+      nuisance_expansion: every_registered_nuisance_severity_case
+      epoch_resampling_rule: not_applicable_cache_frozen_once
+    family_teachers:
+      sampling_policy: capped_evenly_spaced_clean_pool_plus_one_deterministic_cycle_perturbation_per_window
+      max_clean_windows_per_recording: 64
+      recording_balance_rule: capped_not_exactly_recording_balanced
+      epoch_resampling_rule: fixed_examples_seeded_shuffle
+    neural_controls_and_baselines:
+      condition_ids: [raw_iq_cnn, patch_transformer, magnitude_phase_cnn, log_stft_cnn, cwt_cnn, wst_only, cyclic_only, log_psd_sobel, early_fusion_resnet, uniform_late_fusion, ordinary_gate, shuffled_pcrd, pcrd]
+      sampling_policy: deterministic_earliest_valid_source_fit_window
+      max_windows_per_recording_reaching_model: 1
+      recording_balance_rule: exactly_one_clean_window_per_physical_recording
+      nuisance_expansion: every_registered_nuisance_severity_case
+      epoch_resampling_rule: none_fixed_examples_seeded_shuffle
+    stft_dct_xgboost:
+      sampling_policy: capped_evenly_spaced_clean_source_fit_pool
+      max_clean_windows_per_recording: 64
+      recording_balance_rule: capped_not_exactly_recording_balanced
+      epoch_resampling_rule: not_applicable
+    fixed_wavelet_subbands:
+      sampling_policy: capped_evenly_spaced_clean_source_fit_pool
+      max_clean_windows_per_recording: 64
+      recording_balance_rule: capped_not_exactly_recording_balanced
+      epoch_resampling_rule: not_applicable

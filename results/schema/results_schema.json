@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/scars/results.schema.json",
+  "title": "SCARS canonical result",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "evidence_type",
+    "run",
+    "provenance",
+    "datasets",
+    "splits",
+    "source_fitting",
+    "representations",
+    "source_selection",
+    "static_metadata",
+    "held_domain",
+    "baselines",
+    "ablations",
+    "detection",
+    "robustness",
+    "costs",
+    "statistics",
+    "leakage_audits",
+    "hypotheses",
+    "warnings",
+    "registry",
+    "eligibility",
+    "integrity",
+    "tables",
+    "mechanism",
+    "figures",
+    "primary_metric",
+    "synthetic_dev"
+  ],
+  "properties": {
+    "_comment": {"type": "string"},
+    "schema_version": {"const": "scars-canonical-results-2.0"},
+    "evidence_type": {"enum": ["synthetic_dev", "real_confirmatory"]},
+    "run": {
+      "type": "object",
+      "required": ["run_id", "status", "seeds"],
+      "properties": {
+        "run_id": {"type": ["string", "null"]},
+        "status": {"type": ["string", "null"]},
+        "seeds": {"type": ["array", "null"], "items": {"type": "integer"}}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "dataset_checksums": {"type": ["object", "null"], "additionalProperties": {"type": "string", "pattern": "^[0-9a-fA-F]{64}$"}},
+        "artifact_manifest": {
+          "type": ["array", "null"],
+          "items": {
+            "type": "object",
+            "required": ["role", "path", "sha256"],
+            "properties": {
+              "role": {"type": "string"},
+              "path": {"type": "string"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-fA-F]{64}$"}
+            }
+          }
+        }
+      }
+    },
+    "datasets": {"type": "object"},
+    "splits": {"type": "object"},
+    "source_fitting": {"type": "object"},
+    "representations": {"type": "object"},
+    "source_selection": {"type": "object"},
+    "static_metadata": {
+      "type": ["object", "null"],
+      "properties": {
+        "status": {"type": "string"},
+        "empirical_evidence": {"type": "boolean"},
+        "real_run_only": {"type": "object"}
+      }
+    },
+    "held_domain": {
+      "type": "object",
+      "required": ["folds"],
+      "properties": {
+        "folds": {"type": ["array", "null"], "items": {"type": "object", "required": ["fold_id", "conditions"]}}
+      }
+    },
+    "baselines": {"type": "object"},
+    "ablations": {"type": "object"},
+    "detection": {"type": "object"},
+    "robustness": {"type": "object"},
+    "costs": {"type": "object"},
+    "statistics": {"type": "object"},
+    "leakage_audits": {"type": "object"},
+    "hypotheses": {
+      "type": "object",
+      "required": ["H1", "H2", "H3", "H4"],
+      "properties": {
+        "H1": {"type": "object"},
+        "H2": {"type": "object"},
+        "H3": {"type": "object"},
+        "H4": {"type": "object"}
+      },
+      "additionalProperties": false
+    },
+    "warnings": {"type": "array", "items": {"type": "string"}},
+    "registry": {
+      "type": "object",
+      "required": ["recognition_conditions", "ablation_conditions", "required_seeds", "semantic_paths"]
+    },
+    "eligibility": {"type": "object"},
+    "integrity": {"type": "object"},
+    "tables": {
+      "type": "object",
+      "required": ["tab_datasets", "tab_channel_contract", "tab_baselines", "tab_primary_results", "tab_m1", "tab_ablations", "tab_robustness", "tab_detection", "tab_per_class", "tab_routing_calibration", "tab_hypotheses", "tab_integrity"]
+    },
+    "mechanism": {"type": "object", "required": ["relation_coverage", "m1"]},
+    "figures": {
+      "type": "object",
+      "required": ["fig_main_recognition", "fig_m1_effects", "fig_domain_heatmap", "fig_robustness", "fig_routing_diagnostics", "fig_scars_selection_h2", "fig_confusion_matrices", "fig_calibration", "fig_compute_tradeoff"]
+    },
+    "primary_metric": {
+      "type": "object",
+      "required": ["name", "value", "direction", "best_condition"]
+    },
+    "synthetic_dev": {"type": "boolean"},
+    "summary": {"type": ["string", "null"]},
+    "demo_notice": {"type": "object"}
+  },
+  "additionalProperties": false
+}

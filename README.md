@@ -3,8 +3,8 @@
 Source-only Pareto-Consistent Reliability Distillation for Physics-Guided UAV
 Radio-Frequency Recognition.
 
-**Authors:** Trong Thanh Nguyen, Thi-Thanh-Tan Nguyen, and Le Cuong Nguyen.
-Trong Thanh Nguyen and Thi-Thanh-Tan Nguyen share first authorship;
+**Authors:** Trong Thanh Nguyen, Thi-Thanh-Tan Nguyen, Vu Kien Tran and Le Cuong Nguyen.
+Trong Thanh Nguyen, Thi-Thanh-Tan Nguyen and Vu Kien Tran share first authorship;
 Le Cuong Nguyen is the corresponding author.
 
 SCARS constructs source-fitted wavelet scattering (W), cyclostationary (C),
